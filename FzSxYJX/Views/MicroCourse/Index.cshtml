@@ -1,0 +1,135 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "微课";
+}
+@model FzSxYJX.Model.MicroCourseModel
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="@Url.Content("~/Content/App_Theme/css/common.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/App_Theme/css/resourceList.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/App_Theme/css/skin01.css")">
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="header">
+        <div class="hCont">
+            <div class="titleH"><span>微课堂</span></div>
+        </div>
+    </div>
+    @if (Model != null)
+    {
+        <div class="main">
+            <div class="topCont">
+                <div class="mCont">
+                    <div class="titMsg">
+                        <span>@Model.subjectName</span>
+                    </div>
+                    <div class="shopMsg">
+
+                        <div class="searchM">
+                            <div class="left">
+                                <span><a href="#">微课堂</a></span><em></em><span id="second"></span><em style="display:none"></em><span id="three" style="display:none"></span>
+                            </div>
+                            <div class="right">
+                                <div class="search">
+                                    <input class="searchAct" type="button" value="">
+                                    <input class="searchMsg" type="text" value="搜你想要...">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="minNav">
+                            @*<span>共<b>9</b>个资源</span>*@
+                            @*<i class="navslip"></i>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mainCont">
+                <div class="mCont">
+                    <div class="sidebar">
+                        <ul>
+                            @for (int i = 0; i < Model.knowledgeList.Count; i++)
+                            {
+                                if (0 == i)
+                                {
+                                    <li class="cur check">
+                                       
+                                         @if (Model.knowledgeList[i].Children != null && Model.knowledgeList[i].Children.Count > 0)
+                                         {
+                                            <span id="@Model.knowledgeList[i].ID" >@Model.knowledgeList[i].CodeName<em  class="em"></em></span>
+                                            <ul>
+                                                @for (int j = 0; j < Model.knowledgeList[i].Children.Count; j++)
+                                                {
+                                                    @*if (0 == j)
+                                                    {
+                                                        <li class="cur" id="@Model.knowledgeList[i].Children[j].ID">@Model.knowledgeList[i].Children[j].CodeName</li>
+                                                    }
+                                                    else
+                                                    {*@
+                                                        <li id="@Model.knowledgeList[i].Children[j].ID">@Model.knowledgeList[i].Children[j].CodeName</li>
+                                                   // }
+
+                                                }                                             
+                                            </ul>
+                                         }
+                                         else
+                                         {
+                                            <span id="@Model.knowledgeList[i].ID">@Model.knowledgeList[i].CodeName<em></em></span>
+                                         }                                         
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li>                                     
+                                        @if (Model.knowledgeList[i].Children != null && Model.knowledgeList[i].Children.Count > 0)
+                                        {
+                                           <span id="@Model.knowledgeList[i].ID" class="em">@Model.knowledgeList[i].CodeName<em  class="em"></em></span>
+                                            <ul>
+                                               @for (int j = 0; j < Model.knowledgeList[i].Children.Count; j++)
+                                               {                                                  
+                                                    <li id="@Model.knowledgeList[i].Children[j].ID">@Model.knowledgeList[i].Children[j].CodeName</li>
+                                                }
+                                            </ul>
+                                        }
+                                        else
+                                        {
+                                            <span id="@Model.knowledgeList[i].ID">@Model.knowledgeList[i].CodeName<em></em></span>
+                                        }
+                                    </li>
+                                }
+                            }                           
+                        </ul>
+                    </div>
+                    <div class="content">
+                        <div class="resList">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="actionDiv">
+            @*<div class='return' id='return' title='返回上一页'>
+                    <a href='javascript:void(0)'></a>
+                </div>*@
+        </div>
+    }
+    else
+    {
+        <div class="main">暂无该学科的知识点</div>
+    }
+    @*注jquery1.42.min.js 新版本的jquery在加载jsonp跨域请求的时候会出现问题这里采用1.10低版本*@
+    <script src="@Url.Content("/Content/Tools/jquery/jquery-1.10.2.min.js")"></script>
+    <script src="@Url.Content("/Content/App_Theme/js/common.js")"></script>
+    <script src="@Url.Content("/Content/App_Theme/js/GoToTop.js")"></script>
+    <script src="@Url.Content("/Content/App_Theme/js/dialogCont.js")"></script>
+    <script src="@Url.Content("/Content/Scripts/Microcourse.js")"></script>
+</body>
+</html>

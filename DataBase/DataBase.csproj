@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{82405842-AB38-4754-9E86-A44BCCC0EA09}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataBase</RootNamespace>
+    <AssemblyName>DataBase</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ModDataBase.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModDataBase.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModDataBase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModDataBase.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModDataBase.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ModFile.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModFile.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModFile.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModFile.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModFile.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModFile.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ModResource.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModResource.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModResource.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModResource.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="proc_pageView_Result.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_SearchUpdate_Result.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_SearchVerify_Result.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_Search_Result.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RsTempTable.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBA_LessonSet.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBA_ResourceTeaching.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBC_ResourceTypeEdition.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBC_ResourceTypeGrade.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBC_SubjectGrade.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_Code_BookReel.cs">
+      <DependentUpon>ModDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_Code_Knowledge.cs">
+      <DependentUpon>ModDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_Code_ListTable1.cs">
+      <DependentUpon>ModDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_Code_ListTable1_Relationship.cs">
+      <DependentUpon>ModDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_Code_ListTable2.cs">
+      <DependentUpon>ModDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_Code_ListTable3.cs">
+      <DependentUpon>ModDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_Code_ListTable3_Relationship.cs">
+      <DependentUpon>ModDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_Code_SchoolStage.cs">
+      <DependentUpon>ModDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_Code_TreeTable2.cs">
+      <DependentUpon>ModDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_Course.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_CourseApp.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_Course_back.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_Drip.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_Edition.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_Evidence.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_Files.cs">
+      <DependentUpon>ModFile.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_InnerUser.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_LessonSet.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_Resource.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_ResourceApplicable.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_ResourceKnowledge.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_ResourceModel.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_ResourceTeachingModule.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_StandardBook.cs">
+      <DependentUpon>ModDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_StandardCatalog.cs">
+      <DependentUpon>ModDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_Subject.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_TextBook.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_VerifyResource.cs">
+      <DependentUpon>ModResource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewMod_Trunt_Branch.cs">
+      <DependentUpon>ModDataBase.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ModDataBase.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModDataBase.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModDataBase.edmx.diagram">
+      <DependentUpon>ModDataBase.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="ModResource.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModResource.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="ModFile.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModFile.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModFile.edmx.diagram">
+      <DependentUpon>ModFile.edmx</DependentUpon>
+    </None>
+    <None Include="ModResource.edmx.diagram">
+      <DependentUpon>ModResource.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModDataBase.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModDataBase.edmx</DependentUpon>
+      <LastGenOutput>ModDataBase.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModDataBase.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModDataBase.edmx</DependentUpon>
+      <LastGenOutput>ModDataBase.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModFile.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModFile.edmx</DependentUpon>
+      <LastGenOutput>ModFile.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModFile.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModFile.edmx</DependentUpon>
+      <LastGenOutput>ModFile.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModResource.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModResource.edmx</DependentUpon>
+      <LastGenOutput>ModResource.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModResource.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModResource.edmx</DependentUpon>
+      <LastGenOutput>ModResource.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

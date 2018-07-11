@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "首页";
+}
+@model List<FzSxYJX.Model.SubjectModel>
+ <div class="mCont">
+    <div class="topT">智慧课程</div>
+    <div class="contC">
+        <ul class="subjectList" id="subjectList">
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <li subject="@Model[i].SubjectName"><a href="@Url.Action("Index","Apply",new { subjectId = Model[i].SubjectID, stageId = ViewBag.StageID })"><img src="@Url.Content("/Content/App_Theme/image/subject/subject_" + (Model[i].SubjectID) + ".png")" /></a></li>              
+            }
+            <!--<li subject="语文"><img src="./img/subject_1.png"/></li>
+            <li subject="数学"><img src="./img/subject_2.png"/></li>
+            <li subject="外语"><img src="./img/subject_3.png"/></li>-->
+        </ul>
+    </div>
+</div>
+@section Scripts{
+  <script src="@Url.Content("~/Content/App_Theme/js/common.js")"></script>
+  <script src="@Url.Content("~/Content/Scripts/home.js")"></script>
+}

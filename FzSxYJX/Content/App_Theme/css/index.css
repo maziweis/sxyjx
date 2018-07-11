@@ -1,0 +1,22 @@
+
+.main .mCont .topT{text-align:center;font-size:40px;font-family:"黑体";color:#323533;background:url(../image/title_bg.png) center center no-repeat;position:relative;top:-20px;}
+.main .mCont .contC{display:block;overflow:hidden;}
+.contC .subjectList{display:block;margin-top:40px;}
+.contC .subjectList li{display:block;float:left;width:30%;cursor:pointer;margin:30px 1.5%;}
+.contC .subjectList li img {
+    width:100%;
+    transition: all 0.5s;
+    -moz-transition: all 0.5s; /* Firefox 4 */
+    -webkit-transition: all 0.5s; /* Safari 和 Chrome */
+    -o-transition: all 0.5s; /* Opera */
+}
+.contC .subjectList li img:hover {
+    transform: scale(1.1);
+    -ms-transform: scale(1.1);  /* IE 9 */
+    -moz-transform: scale(1.1);  /* Firefox */
+    -webkit-transform: scale(1.1); /* Safari 和 Chrome */
+    -o-transform: scale(1.1);
+}
+
+.contC .subjectList li.cur{color:#ccf;}
+

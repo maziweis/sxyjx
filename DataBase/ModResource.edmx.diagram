@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bd8c4363d42042c69b299d790f1d2e7f" Name="Diagram1" ZoomLevel="60">
+        <EntityTypeShape EntityType="MODResourceModel.tb_Course" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MODResourceModel.tb_CourseApp" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MODResourceModel.tb_Drip" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MODResourceModel.tb_Edition" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MODResourceModel.tb_Evidence" Width="1.5" PointX="5.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MODResourceModel.tb_InnerUser" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MODResourceModel.tb_LessonSet" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MODResourceModel.tb_Resource" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MODResourceModel.tb_ResourceModel" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MODResourceModel.tb_Subject" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MODResourceModel.tb_TextBook" Width="1.5" PointX="2.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MODResourceModel.tb_VerifyResource" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MODResourceModel.TBA_LessonSet" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MODResourceModel.TBC_ResourceTypeEdition" Width="1.5" PointX="11.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MODResourceModel.TBC_ResourceTypeGrade" Width="1.5" PointX="7.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MODResourceModel.TBC_SubjectGrade" Width="1.5" PointX="9.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MODResourceModel.RsTempTable" Width="1.5" PointX="11.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MODResourceModel.tb_Course_back" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MODResourceModel.tb_ResourceApplicable" Width="1.5" PointX="13.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MODResourceModel.tb_ResourceKnowledge" Width="1.5" PointX="5.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MODResourceModel.tb_ResourceTeachingModule" Width="1.5" PointX="4.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MODResourceModel.TBA_ResourceTeaching" Width="1.5" PointX="13.75" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="MODResourceModel.FK_tb_ResourceKnowledge_tb_Resource" ManuallyRouted="false" />
+        <AssociationConnector Association="MODResourceModel.FK_tb_VerifyResource_tb_Resource" ManuallyRouted="false" />
+        <AssociationConnector Association="MODResourceModel.tb_ResourceCreator" ManuallyRouted="false" />
+        <AssociationConnector Association="MODResourceModel.tb_ResourceDetector" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

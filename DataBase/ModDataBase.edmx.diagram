@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="960f8ab182424b78967bf9b891c4d2e0" Name="Diagram1">
+        <EntityTypeShape EntityType="MOD_Meta_BranchModel.tb_Code_ListTable1" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MOD_Meta_BranchModel.tb_Code_ListTable2" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MOD_Meta_BranchModel.tb_Code_ListTable3" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MOD_Meta_BranchModel.tb_Code_TreeTable2" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MOD_Meta_BranchModel.tb_StandardBook" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MOD_Meta_BranchModel.tb_StandardCatalog" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MOD_Meta_BranchModel.tb_Code_ListTable1_Relationship" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MOD_Meta_BranchModel.tb_Code_SchoolStage" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MOD_Meta_BranchModel.tb_Code_Knowledge" Width="1.5" PointX="7.375" PointY="4.75" />
+        <EntityTypeShape EntityType="MOD_Meta_BranchModel.tb_Code_BookReel" Width="1.5" PointX="5.375" PointY="8.75" />
+        <EntityTypeShape EntityType="MOD_Meta_BranchModel.tb_Code_ListTable3_Relationship" Width="1.5" PointX="7.375" PointY="8.75" />
+        <EntityTypeShape EntityType="MOD_Meta_BranchModel.ViewMod_Trunt_Branch" Width="1.5" PointX="9.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

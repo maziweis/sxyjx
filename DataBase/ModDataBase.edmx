@@ -1,0 +1,593 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MOD_Meta_BranchModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tb_Code_BookReel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GUID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CodeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Limited" Type="int" />
+          <Property Name="Seq" Type="int" />
+          <Property Name="CreateDateTime" Type="datetime" />
+          <Property Name="ModifyDateTime" Type="datetime" />
+          <Property Name="Deleted" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tb_Code_Knowledge">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GUID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CodeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Seq" Type="int" />
+          <Property Name="ParentID" Type="int" Nullable="false" />
+          <Property Name="Path" Type="nvarchar" MaxLength="300" />
+          <Property Name="CreateDateTime" Type="datetime" />
+          <Property Name="ModifyDateTime" Type="datetime" />
+          <Property Name="Deleted" Type="int" Nullable="false" />
+          <Property Name="SubjectID" Type="int" Nullable="false" />
+          <Property Name="StageID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_Code_ListTable1">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GUID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CodeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Limited" Type="int" />
+          <Property Name="Seq" Type="int" />
+          <Property Name="CreateDateTime" Type="datetime" />
+          <Property Name="ModifyDateTime" Type="datetime" />
+          <Property Name="Deleted" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tb_Code_ListTable1_Relationship">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Start_ID" Type="int" Nullable="false" />
+          <Property Name="End_ID" Type="int" Nullable="false" />
+          <Property Name="Seq" Type="int" Nullable="false" />
+          <Property Name="CreateDateTime" Type="datetime" Nullable="false" />
+          <Property Name="ModifyDateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_Code_ListTable2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GUID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CodeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Limited" Type="int" />
+          <Property Name="Seq" Type="int" />
+          <Property Name="CreateDateTime" Type="datetime" />
+          <Property Name="ModifyDateTime" Type="datetime" />
+          <Property Name="Deleted" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tb_Code_ListTable3">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GUID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CodeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Limited" Type="int" />
+          <Property Name="Seq" Type="int" />
+          <Property Name="CreateDateTime" Type="datetime" />
+          <Property Name="ModifyDateTime" Type="datetime" />
+          <Property Name="Deleted" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tb_Code_ListTable3_Relationship">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Start_ID" Type="int" Nullable="false" />
+          <Property Name="End_ID" Type="int" Nullable="false" />
+          <Property Name="Seq" Type="int" Nullable="false" />
+          <Property Name="CreateDateTime" Type="datetime" Nullable="false" />
+          <Property Name="ModifyDateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_Code_SchoolStage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GUID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CodeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Limited" Type="int" />
+          <Property Name="Seq" Type="int" />
+          <Property Name="CreateDateTime" Type="datetime" />
+          <Property Name="ModifyDateTime" Type="datetime" />
+          <Property Name="Deleted" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tb_Code_TreeTable2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GUID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CodeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Seq" Type="int" />
+          <Property Name="ParentID" Type="int" Nullable="false" />
+          <Property Name="Path" Type="nvarchar" MaxLength="300" />
+          <Property Name="CreateDateTime" Type="datetime" />
+          <Property Name="ModifyDateTime" Type="datetime" />
+          <Property Name="Deleted" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_StandardBook">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Stage" Type="int" Nullable="false" />
+          <Property Name="Subject" Type="int" Nullable="false" />
+          <Property Name="Grade" Type="int" Nullable="false" />
+          <Property Name="Booklet" Type="int" Nullable="false" />
+          <Property Name="Edition" Type="int" Nullable="false" />
+          <Property Name="BooKName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="500" />
+          <Property Name="CreateDateTime" Type="datetime" />
+          <Property Name="ModifyDateTime" Type="datetime" />
+          <Property Name="Deleted" Type="int" Nullable="false" />
+          <Property Name="BookType" Type="int" Nullable="false" />
+          <Property Name="AgeRange" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_StandardCatalog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BookID" Type="int" Nullable="false" />
+          <Property Name="FolderName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Seq" Type="int" Nullable="false" />
+          <Property Name="ParentID" Type="int" Nullable="false" />
+          <Property Name="CreateDateTime" Type="datetime" />
+          <Property Name="ModifyDateTime" Type="datetime" />
+          <Property Name="Deleted" Type="int" Nullable="false" />
+          <Property Name="Type" Type="int" />
+          <Property Name="PageStart" Type="int" />
+          <Property Name="PageEnd" Type="int" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“MOD_Meta_Branch.dbo.ViewMod_Trunt_Branch”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="ViewMod_Trunt_Branch">
+          <Key>
+            <PropertyRef Name="bID" />
+            <PropertyRef Name="bBookID" />
+            <PropertyRef Name="FolderName" />
+          </Key>
+          <Property Name="bID" Type="int" Nullable="false" />
+          <Property Name="tID" Type="int" />
+          <Property Name="tBookID" Type="int" />
+          <Property Name="bBookID" Type="int" Nullable="false" />
+          <Property Name="FolderName" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MOD_Meta_BranchModelStoreContainer">
+          <EntitySet Name="tb_Code_BookReel" EntityType="Self.tb_Code_BookReel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Code_Knowledge" EntityType="Self.tb_Code_Knowledge" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Code_ListTable1" EntityType="Self.tb_Code_ListTable1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Code_ListTable1_Relationship" EntityType="Self.tb_Code_ListTable1_Relationship" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Code_ListTable2" EntityType="Self.tb_Code_ListTable2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Code_ListTable3" EntityType="Self.tb_Code_ListTable3" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Code_ListTable3_Relationship" EntityType="Self.tb_Code_ListTable3_Relationship" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Code_SchoolStage" EntityType="Self.tb_Code_SchoolStage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Code_TreeTable2" EntityType="Self.tb_Code_TreeTable2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_StandardBook" EntityType="Self.tb_StandardBook" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_StandardCatalog" EntityType="Self.tb_StandardCatalog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ViewMod_Trunt_Branch" EntityType="Self.ViewMod_Trunt_Branch" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewMod_Trunt_Branch].[bID] AS [bID], 
+    [ViewMod_Trunt_Branch].[tID] AS [tID], 
+    [ViewMod_Trunt_Branch].[tBookID] AS [tBookID], 
+    [ViewMod_Trunt_Branch].[bBookID] AS [bBookID], 
+    [ViewMod_Trunt_Branch].[FolderName] AS [FolderName]
+    FROM [dbo].[ViewMod_Trunt_Branch] AS [ViewMod_Trunt_Branch]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MOD_Meta_BranchModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tb_Code_ListTable1">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GUID" Type="Guid" Nullable="false" />
+          <Property Name="CodeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Limited" Type="Int32" />
+          <Property Name="Seq" Type="Int32" />
+          <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
+          <Property Name="ModifyDateTime" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tb_Code_ListTable2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GUID" Type="Guid" Nullable="false" />
+          <Property Name="CodeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Limited" Type="Int32" />
+          <Property Name="Seq" Type="Int32" />
+          <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
+          <Property Name="ModifyDateTime" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tb_Code_ListTable3">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GUID" Type="Guid" Nullable="false" />
+          <Property Name="CodeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Limited" Type="Int32" />
+          <Property Name="Seq" Type="Int32" />
+          <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
+          <Property Name="ModifyDateTime" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tb_Code_TreeTable2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GUID" Type="Guid" Nullable="false" />
+          <Property Name="CodeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Seq" Type="Int32" />
+          <Property Name="ParentID" Type="Int32" Nullable="false" />
+          <Property Name="Path" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
+          <Property Name="ModifyDateTime" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_StandardBook">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Stage" Type="Int32" Nullable="false" />
+          <Property Name="Subject" Type="Int32" Nullable="false" />
+          <Property Name="Grade" Type="Int32" Nullable="false" />
+          <Property Name="Booklet" Type="Int32" Nullable="false" />
+          <Property Name="Edition" Type="Int32" Nullable="false" />
+          <Property Name="BooKName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
+          <Property Name="ModifyDateTime" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Int32" Nullable="false" />
+          <Property Name="BookType" Type="Int32" Nullable="false" />
+          <Property Name="AgeRange" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_StandardCatalog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BookID" Type="Int32" Nullable="false" />
+          <Property Name="FolderName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Seq" Type="Int32" Nullable="false" />
+          <Property Name="ParentID" Type="Int32" Nullable="false" />
+          <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
+          <Property Name="ModifyDateTime" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="PageStart" Type="Int32" />
+          <Property Name="PageEnd" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="ModMetaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_Code_ListTable1" EntityType="Self.tb_Code_ListTable1" />
+          <EntitySet Name="tb_Code_ListTable2" EntityType="Self.tb_Code_ListTable2" />
+          <EntitySet Name="tb_Code_ListTable3" EntityType="Self.tb_Code_ListTable3" />
+          <EntitySet Name="tb_Code_TreeTable2" EntityType="Self.tb_Code_TreeTable2" />
+          <EntitySet Name="tb_StandardBook" EntityType="Self.tb_StandardBook" />
+          <EntitySet Name="tb_StandardCatalog" EntityType="Self.tb_StandardCatalog" />
+          <EntitySet Name="tb_Code_SchoolStage" EntityType="MOD_Meta_BranchModel.tb_Code_SchoolStage" />
+          <EntitySet Name="tb_Code_ListTable1_Relationship" EntityType="MOD_Meta_BranchModel.tb_Code_ListTable1_Relationship" />
+          <EntitySet Name="tb_Code_Knowledge" EntityType="MOD_Meta_BranchModel.tb_Code_Knowledge" />
+          <EntitySet Name="tb_Code_BookReel" EntityType="MOD_Meta_BranchModel.tb_Code_BookReel" />
+          <EntitySet Name="tb_Code_ListTable3_Relationship" EntityType="MOD_Meta_BranchModel.tb_Code_ListTable3_Relationship" />
+          <EntitySet Name="ViewMod_Trunt_Branch" EntityType="MOD_Meta_BranchModel.ViewMod_Trunt_Branch" />
+        </EntityContainer>
+        <EntityType Name="tb_Code_SchoolStage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GUID" Type="Guid" Nullable="false" />
+          <Property Name="CodeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Limited" Type="Int32" />
+          <Property Name="Seq" Type="Int32" />
+          <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
+          <Property Name="ModifyDateTime" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tb_Code_ListTable1_Relationship">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Start_ID" Type="Int32" Nullable="false" />
+          <Property Name="End_ID" Type="Int32" Nullable="false" />
+          <Property Name="Seq" Type="Int32" Nullable="false" />
+          <Property Name="CreateDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifyDateTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="tb_Code_Knowledge">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GUID" Type="Guid" Nullable="false" />
+          <Property Name="CodeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Seq" Type="Int32" />
+          <Property Name="ParentID" Type="Int32" Nullable="false" />
+          <Property Name="Path" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
+          <Property Name="ModifyDateTime" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Int32" Nullable="false" />
+          <Property Name="SubjectID" Type="Int32" Nullable="false" />
+          <Property Name="StageID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_Code_BookReel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GUID" Type="Guid" Nullable="false" />
+          <Property Name="CodeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Limited" Type="Int32" />
+          <Property Name="Seq" Type="Int32" />
+          <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
+          <Property Name="ModifyDateTime" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tb_Code_ListTable3_Relationship">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Start_ID" Type="Int32" Nullable="false" />
+          <Property Name="End_ID" Type="Int32" Nullable="false" />
+          <Property Name="Seq" Type="Int32" Nullable="false" />
+          <Property Name="CreateDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifyDateTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="ViewMod_Trunt_Branch">
+          <Key>
+            <PropertyRef Name="bID" />
+            <PropertyRef Name="bBookID" />
+            <PropertyRef Name="FolderName" />
+          </Key>
+          <Property Name="bID" Type="Int32" Nullable="false" />
+          <Property Name="tID" Type="Int32" />
+          <Property Name="tBookID" Type="Int32" />
+          <Property Name="bBookID" Type="Int32" Nullable="false" />
+          <Property Name="FolderName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MOD_Meta_BranchModelStoreContainer" CdmEntityContainer="ModMetaEntities">
+          <EntitySetMapping Name="tb_Code_ListTable1">
+            <EntityTypeMapping TypeName="MOD_Meta_BranchModel.tb_Code_ListTable1">
+              <MappingFragment StoreEntitySet="tb_Code_ListTable1">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+                <ScalarProperty Name="Limited" ColumnName="Limited" />
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="ModifyDateTime" ColumnName="ModifyDateTime" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Code_ListTable2">
+            <EntityTypeMapping TypeName="MOD_Meta_BranchModel.tb_Code_ListTable2">
+              <MappingFragment StoreEntitySet="tb_Code_ListTable2">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+                <ScalarProperty Name="Limited" ColumnName="Limited" />
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="ModifyDateTime" ColumnName="ModifyDateTime" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Code_ListTable3">
+            <EntityTypeMapping TypeName="MOD_Meta_BranchModel.tb_Code_ListTable3">
+              <MappingFragment StoreEntitySet="tb_Code_ListTable3">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+                <ScalarProperty Name="Limited" ColumnName="Limited" />
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="ModifyDateTime" ColumnName="ModifyDateTime" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Code_TreeTable2">
+            <EntityTypeMapping TypeName="MOD_Meta_BranchModel.tb_Code_TreeTable2">
+              <MappingFragment StoreEntitySet="tb_Code_TreeTable2">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="ModifyDateTime" ColumnName="ModifyDateTime" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_StandardBook">
+            <EntityTypeMapping TypeName="MOD_Meta_BranchModel.tb_StandardBook">
+              <MappingFragment StoreEntitySet="tb_StandardBook">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Stage" ColumnName="Stage" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="Booklet" ColumnName="Booklet" />
+                <ScalarProperty Name="Edition" ColumnName="Edition" />
+                <ScalarProperty Name="BooKName" ColumnName="BooKName" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="ModifyDateTime" ColumnName="ModifyDateTime" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="BookType" ColumnName="BookType" />
+                <ScalarProperty Name="AgeRange" ColumnName="AgeRange" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_StandardCatalog">
+            <EntityTypeMapping TypeName="MOD_Meta_BranchModel.tb_StandardCatalog">
+              <MappingFragment StoreEntitySet="tb_StandardCatalog">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BookID" ColumnName="BookID" />
+                <ScalarProperty Name="FolderName" ColumnName="FolderName" />
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="ModifyDateTime" ColumnName="ModifyDateTime" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="PageStart" ColumnName="PageStart" />
+                <ScalarProperty Name="PageEnd" ColumnName="PageEnd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Code_SchoolStage">
+            <EntityTypeMapping TypeName="MOD_Meta_BranchModel.tb_Code_SchoolStage">
+              <MappingFragment StoreEntitySet="tb_Code_SchoolStage">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="ModifyDateTime" ColumnName="ModifyDateTime" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="Limited" ColumnName="Limited" />
+                <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Code_ListTable1_Relationship">
+            <EntityTypeMapping TypeName="MOD_Meta_BranchModel.tb_Code_ListTable1_Relationship">
+              <MappingFragment StoreEntitySet="tb_Code_ListTable1_Relationship">
+                <ScalarProperty Name="ModifyDateTime" ColumnName="ModifyDateTime" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="End_ID" ColumnName="End_ID" />
+                <ScalarProperty Name="Start_ID" ColumnName="Start_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Code_Knowledge">
+            <EntityTypeMapping TypeName="MOD_Meta_BranchModel.tb_Code_Knowledge">
+              <MappingFragment StoreEntitySet="tb_Code_Knowledge">
+                <ScalarProperty Name="StageID" ColumnName="StageID" />
+                <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="ModifyDateTime" ColumnName="ModifyDateTime" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Code_BookReel">
+            <EntityTypeMapping TypeName="MOD_Meta_BranchModel.tb_Code_BookReel">
+              <MappingFragment StoreEntitySet="tb_Code_BookReel">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="ModifyDateTime" ColumnName="ModifyDateTime" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="Limited" ColumnName="Limited" />
+                <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Code_ListTable3_Relationship">
+            <EntityTypeMapping TypeName="MOD_Meta_BranchModel.tb_Code_ListTable3_Relationship">
+              <MappingFragment StoreEntitySet="tb_Code_ListTable3_Relationship">
+                <ScalarProperty Name="ModifyDateTime" ColumnName="ModifyDateTime" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="End_ID" ColumnName="End_ID" />
+                <ScalarProperty Name="Start_ID" ColumnName="Start_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewMod_Trunt_Branch">
+            <EntityTypeMapping TypeName="MOD_Meta_BranchModel.ViewMod_Trunt_Branch">
+              <MappingFragment StoreEntitySet="ViewMod_Trunt_Branch">
+                <ScalarProperty Name="FolderName" ColumnName="FolderName" />
+                <ScalarProperty Name="bBookID" ColumnName="bBookID" />
+                <ScalarProperty Name="tBookID" ColumnName="tBookID" />
+                <ScalarProperty Name="tID" ColumnName="tID" />
+                <ScalarProperty Name="bID" ColumnName="bID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "教材页面";
+    Layout = "~/Views/Shared/_LayoutContent.cshtml";
+}
+@model FzSxYJX.Model.ApplyModel
+@if (Model != null)
+{
+    <div class="mCont">
+        <input type="hidden" id="subjectID" value="@ViewBag.SubjetID" />
+        <input type="hidden" id="stageID" value="@ViewBag.StageID" />
+        @if (Model.CourseAllList.EditionList != null && Model.CourseAllList.EditionList.Count > 0)
+        {
+            <div class="module md01">
+                <div class="selectC">
+                    <ul id="versionList">
+                        @for (int i = 0; i < Model.CourseAllList.EditionList.Count; i++)
+                        {
+                            if (0 == i)
+                            {
+                                <li class="cur" id="@Model.CourseAllList.EditionList[i].EditionID">@Model.CourseAllList.EditionList[i].EditionName</li>
+                            }
+                            else
+                            {
+                                <li id="@Model.CourseAllList.EditionList[i].EditionID">@Model.CourseAllList.EditionList[i].EditionName</li>
+                            }
+                        }
+                    </ul>
+                    <i class="navslip"></i>
+                    @if (ViewBag.SubjetID == 2 && ViewBag.StageID == 2)
+                    {
+                        <a class="otherMod" href="@Url.Action("Index","MicroCourse",new { subjectId=ViewBag.SubjetID})" target="_blank">微课堂</a>
+                    }                   
+                </div>
+                <div class="objList">
+                    <ul id="bookList">
+                        @foreach (var book in Model.CourseAllList.CourseList)
+                        {
+                            if (book.IsOwnApply)
+                            {
+                                <li class="OwnApply" id="@book.ID"><a><b><em class="pen"></em><img src="@book.ImageUrl" alt="cover"></b><span>@book.CourseName</span></a></li>
+                            }
+                            else
+                            {
+                                <li id="@book.ID"><a href="@Url.Action("Index","Resource",new { BookID = book.ID})" target="_blank"><b><em class="pen"></em><img src="@book.ImageUrl" alt="cover"></b><span>@book.CourseName</span></a></li>
+                            }
+                        }                   
+                    </ul>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="module md01">
+                <div class="selectC">
+                    <ul id="versionList">                       
+                    </ul>
+                    <i class="navslip"></i>
+                    <input class="otherMod" type="button" value="微课堂" />
+                </div>
+                <div class="objList">
+                    <ul id="bookList"> 
+                        <li>教材数据正在制作中。。。</li>                      
+                    </ul>
+                </div>
+            </div>
+        }
+        <div class="module md02">
+            @if (Model.MoviceList != null && Model.MoviceList.Count > 0)
+            {
+
+                <div class="selectC">
+                    <ul>
+                        <li class="cur">电影课</li>
+                    </ul>
+                    <i class="navslip" style="width:61px"></i>
+                </div>
+                <div class="objList">
+                    <ul>
+                        @foreach (var movice in Model.MoviceList)
+                        {
+                            <li><a href="@movice.Url" target="_blank"><b><em class="pen"></em><img src="@movice.ImageUrl" alt="cover"></b><span>@movice.MoviceName</span></a></li>
+                        }
+                   </ul>                  
+                </div>
+            }
+        </div>
+    </div>
+}
+else
+{
+    <div class="mCont">暂无数据</div>
+}
+
+@section Styles{
+    <link href="@Url.Content("~/Content/App_Theme/css/common.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/App_Theme/css/bookList.css")" rel="stylesheet" />
+}
+@section Scripts{
+    <script src="@Url.Content("~/Content/App_Theme/js/common.js")"></script>
+    <script src="@Url.Content("~/Content/App_Theme/js/dialogCont.js")"></script>
+    <script src="@Url.Content("~/Content/Scripts/apply.js")"></script>
+}

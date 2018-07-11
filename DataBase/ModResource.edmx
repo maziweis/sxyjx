@@ -1,0 +1,1787 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MODResourceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“MOD_Resource_Branch.dbo.RsTempTable”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="RsTempTable">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="FileID" />
+            <PropertyRef Name="Sort" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Number" Type="float" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="SchoolStage" Type="int" />
+          <Property Name="Grade" Type="int" />
+          <Property Name="Subject" Type="int" />
+          <Property Name="Edition" Type="int" />
+          <Property Name="BookReel" Type="int" />
+          <Property Name="Catalog" Type="int" />
+          <Property Name="ResourceType" Type="int" />
+          <Property Name="ResourceStyle" Type="int" />
+          <Property Name="ResourceLevel" Type="int" />
+          <Property Name="KeyWords" Type="nvarchar" MaxLength="100" />
+          <Property Name="TeachingStep" Type="int" />
+          <Property Name="TeachingModules" Type="nvarchar" MaxLength="50" />
+          <Property Name="TeachingStyle" Type="int" />
+          <Property Name="Applicable" Type="nvarchar" MaxLength="50" />
+          <Property Name="FileID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="300" />
+          <Property Name="IsVerify" Type="int" />
+          <Property Name="Purview" Type="int" />
+          <Property Name="UploadDate" Type="datetime" />
+          <Property Name="UploadUser" Type="varchar" MaxLength="30" />
+          <Property Name="IsDelete" Type="int" />
+          <Property Name="DownCounts" Type="int" />
+          <Property Name="ScanCounts" Type="int" />
+          <Property Name="FileType" Type="nvarchar" MaxLength="10" />
+          <Property Name="BreviaryImgUrl" Type="nvarchar" MaxLength="500" />
+          <Property Name="ResourceSize" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsRecommend" Type="int" />
+          <Property Name="MaterialID" Type="uniqueidentifier" />
+          <Property Name="ComeFrom" Type="nvarchar" MaxLength="50" />
+          <Property Name="Copyright" Type="int" />
+          <Property Name="CopyrightName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sort" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_Course">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CourseName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Version" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="EditionID" Type="int" Nullable="false" />
+          <Property Name="ImgPath" Type="varchar" MaxLength="50" />
+          <Property Name="CoursePath" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="varchar" MaxLength="200" />
+          <Property Name="CourseKey" Type="varchar" MaxLength="50" />
+          <Property Name="Coursetype" Type="varchar" MaxLength="10" />
+          <Property Name="Grade" Type="varchar" MaxLength="10" />
+          <Property Name="Subject" Type="varchar" MaxLength="10" />
+          <Property Name="FileSize" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="TimeSpan" Type="int" />
+          <Property Name="BookReel" Type="int" />
+          <Property Name="SchoolStage" Type="int" />
+          <Property Name="UploadDate" Type="datetime" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“MOD_Resource_Branch.dbo.tb_Course_back”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="tb_Course_back">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="CourseName" />
+            <PropertyRef Name="Version" />
+            <PropertyRef Name="EditionID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CourseName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Version" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="EditionID" Type="int" Nullable="false" />
+          <Property Name="ImgPath" Type="varchar" MaxLength="50" />
+          <Property Name="CoursePath" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="varchar" MaxLength="200" />
+          <Property Name="CourseKey" Type="varchar" MaxLength="50" />
+          <Property Name="Coursetype" Type="varchar" MaxLength="10" />
+          <Property Name="Grade" Type="varchar" MaxLength="10" />
+          <Property Name="Subject" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tb_CourseApp">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CourseID" Type="int" Nullable="false" />
+          <Property Name="AppName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Version" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Folder" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OrderType" Type="int" Nullable="false" />
+          <Property Name="AppType" Type="int" Nullable="false" />
+          <Property Name="AppKey" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_Drip">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClssId" Type="int" />
+          <Property Name="PageNum" Type="int" />
+          <Property Name="JsStringUrl" Type="nvarchar" MaxLength="4000" />
+        </EntityType>
+        <EntityType Name="tb_Edition">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="SubjectID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="EditionName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SubjectID" Type="int" Nullable="false" />
+          <Property Name="EType" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tb_Evidence">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ToKen" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsWorking" Type="int" />
+          <Property Name="IsDeleted" Type="int" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="100" />
+          <Property Name="ErrorUrl" Type="nvarchar" MaxLength="100" />
+          <Property Name="Ke" Type="int" />
+          <Property Name="Yun" Type="int" />
+          <Property Name="Movie" Type="int" />
+          <Property Name="IsBuy" Type="int" />
+        </EntityType>
+        <EntityType Name="tb_InnerUser">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserState" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_LessonSet">
+          <Key>
+            <PropertyRef Name="LessonSetID" />
+          </Key>
+          <Property Name="LessonSetID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AttachID" Type="uniqueidentifier" />
+          <Property Name="LessonSetName" Type="nvarchar" MaxLength="250" />
+          <Property Name="AttachName" Type="nvarchar" MaxLength="250" />
+          <Property Name="Stage" Type="int" />
+          <Property Name="Subject" Type="int" />
+          <Property Name="Edition" Type="int" />
+          <Property Name="Grade" Type="int" />
+          <Property Name="Year" Type="nvarchar" MaxLength="10" />
+          <Property Name="CreatTime" Type="datetime" />
+          <Property Name="FileType" Type="nvarchar" MaxLength="10" />
+          <Property Name="IsDelete" Type="int" />
+          <Property Name="BookReel" Type="int" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6013: 表/视图“MOD_Resource_Branch.dbo.tb_Power”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="tb_Power">
+          <Property Name="ID" Type="int" />
+          <Property Name="MoudleID" Type="int" />
+          <Property Name="IsPower" Type="int" />
+        </EntityType>-->
+        <EntityType Name="tb_Resource">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Number" Type="float" />
+          <Property Name="Title" Type="nvarchar" MaxLength="500" />
+          <Property Name="SchoolStage" Type="int" />
+          <Property Name="Grade" Type="int" />
+          <Property Name="Subject" Type="int" />
+          <Property Name="Edition" Type="int" />
+          <Property Name="BookReel" Type="int" />
+          <Property Name="Catalog" Type="int" />
+          <Property Name="ResourceType" Type="int" />
+          <Property Name="ResourceStyle" Type="int" />
+          <Property Name="ResourceLevel" Type="int" />
+          <Property Name="KeyWords" Type="nvarchar" MaxLength="1000" />
+          <Property Name="TeachingStep" Type="int" />
+          <Property Name="TeachingStyle" Type="int" />
+          <Property Name="FileID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="IsVerify" Type="int" />
+          <Property Name="Purview" Type="int" />
+          <Property Name="UploadDate" Type="datetime" />
+          <Property Name="UploadUser" Type="varchar" MaxLength="30" />
+          <Property Name="IsDelete" Type="int" />
+          <Property Name="DownCounts" Type="int" />
+          <Property Name="ScanCounts" Type="int" />
+          <Property Name="FileType" Type="nvarchar" MaxLength="10" />
+          <Property Name="BreviaryImgUrl" Type="nvarchar" MaxLength="500" />
+          <Property Name="ResourceSize" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="IsRecommend" Type="int" />
+          <Property Name="MaterialID" Type="uniqueidentifier" />
+          <Property Name="ComeFrom" Type="nvarchar" MaxLength="50" />
+          <Property Name="AppraisedCounts" Type="int" />
+          <Property Name="CollectCounts" Type="int" />
+          <Property Name="TeachingModules" Type="nvarchar" MaxLength="50" />
+          <Property Name="Applicable" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="Copyright" Type="int" />
+          <Property Name="CopyrightName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sort" Type="bigint" Nullable="false" />
+          <Property Name="TimeSpan" Type="int" />
+          <Property Name="ResourceClass" Type="int" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“MOD_Resource_Branch.dbo.tb_ResourceApplicable”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="tb_ResourceApplicable">
+          <Key>
+            <PropertyRef Name="ResourceID" />
+            <PropertyRef Name="ApplicableID" />
+          </Key>
+          <Property Name="ResourceID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ApplicableID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“MOD_Resource_Branch.dbo.tb_ResourceCreator”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="tb_ResourceCreator">
+          <Key>
+            <PropertyRef Name="ResourceID" />
+            <PropertyRef Name="InnerUserID" />
+          </Key>
+          <Property Name="ResourceID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="InnerUserID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“MOD_Resource_Branch.dbo.tb_ResourceDetector”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="tb_ResourceDetector">
+          <Key>
+            <PropertyRef Name="ResourceID" />
+            <PropertyRef Name="InnerUserID" />
+          </Key>
+          <Property Name="ResourceID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="InnerUserID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“MOD_Resource_Branch.dbo.tb_ResourceKnowledge”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="tb_ResourceKnowledge">
+          <Key>
+            <PropertyRef Name="ResourceID" />
+            <PropertyRef Name="KnowledgeID" />
+          </Key>
+          <Property Name="ResourceID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="KnowledgeID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_ResourceModel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“MOD_Resource_Branch.dbo.tb_ResourceTeachingModule”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="tb_ResourceTeachingModule">
+          <Key>
+            <PropertyRef Name="ResourceID" />
+            <PropertyRef Name="TeachingModuleID" />
+          </Key>
+          <Property Name="ResourceID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TeachingModuleID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_Subject">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="SubjectName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_TextBook">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClssId" Type="int" />
+          <Property Name="ClssName" Type="nvarchar" MaxLength="50" />
+          <Property Name="TextBookPath" Type="varchar" MaxLength="50" />
+          <Property Name="ThumbnailsPath" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_VerifyResource">
+          <Key>
+            <PropertyRef Name="ResourceID" />
+          </Key>
+          <Property Name="ResourceID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="VerifyState" Type="int" Nullable="false" />
+          <Property Name="VerifyDate" Type="datetime" Nullable="false" />
+          <Property Name="VerifyUser" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6013: 表/视图“MOD_Resource_Branch.dbo.TBA_Course”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="TBA_Course">
+          <Property Name="Grade1" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Grade2" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Grade3" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Grade4" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Grade5" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Grade6" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Grade7" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Grade8" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Grade9" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Grade10" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Grade11" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Grade12" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Grade13" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="SchoolStageID" Type="int" />
+          <Property Name="SubjectID" Type="int" />
+          <Property Name="EditionID" Type="int" />
+          <Property Name="BookReelID" Type="int" />
+          <Property Name="Coursetype" Type="nchar" MaxLength="10" />
+          <Property Name="UploadDate" Type="datetime" />
+        </EntityType>-->
+        <EntityType Name="TBA_LessonSet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubjectID" Type="int" />
+          <Property Name="SchoolStageID" Type="int" />
+          <Property Name="EditionID" Type="int" />
+          <Property Name="TotalCounts" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TotalTimeSpan" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TotalSize" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="UploadDate" Type="datetime" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“MOD_Resource_Branch.dbo.TBA_ResourceTeaching”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="TBA_ResourceTeaching">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SchoolStageID" Type="int" />
+          <Property Name="GradeID" Type="int" />
+          <Property Name="SubjectID" Type="int" />
+          <Property Name="EditionID" Type="int" />
+          <Property Name="BookReelID" Type="int" />
+          <Property Name="TotalCounts" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TotalSize" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CountsLess1M" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Counts1To10M" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Counts10To100M" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CountsOver100M" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CountsKJ" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CountsHDKJ" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CountsTP" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CountsDH" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CountsYP" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CountsWB" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CountsSJ" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CountsSP" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="UploadDate" Type="datetime" />
+          <Property Name="AnalysDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TBC_ResourceTypeEdition">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeID" Type="int" Nullable="false" />
+          <Property Name="StyleID" Type="int" Nullable="false" />
+          <Property Name="EditionID" Type="int" Nullable="false" />
+          <Property Name="SchoolStageID" Type="int" Nullable="false" />
+          <Property Name="SubjectID" Type="int" Nullable="false" />
+          <Property Name="TotalCounts" Type="int" />
+          <Property Name="CountDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TBC_ResourceTypeGrade">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeID" Type="int" Nullable="false" />
+          <Property Name="StyleID" Type="int" Nullable="false" />
+          <Property Name="GradeID" Type="int" Nullable="false" />
+          <Property Name="SchoolStageID" Type="int" Nullable="false" />
+          <Property Name="TotalCounts" Type="int" />
+          <Property Name="CountDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TBC_SubjectGrade">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubjectID" Type="int" Nullable="false" />
+          <Property Name="GradeID" Type="int" Nullable="false" />
+          <Property Name="SchoolStageID" Type="int" Nullable="false" />
+          <Property Name="TotalCounts" Type="int" />
+          <Property Name="CountDate" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_tb_ResourceCreator_tb_InnerUser">
+          <End Role="tb_InnerUser" Type="Self.tb_InnerUser" Multiplicity="1" />
+          <End Role="tb_ResourceCreator" Type="Self.tb_ResourceCreator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_InnerUser">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="tb_ResourceCreator">
+              <PropertyRef Name="InnerUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_ResourceCreator_tb_Resource">
+          <End Role="tb_Resource" Type="Self.tb_Resource" Multiplicity="1" />
+          <End Role="tb_ResourceCreator" Type="Self.tb_ResourceCreator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Resource">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_ResourceCreator">
+              <PropertyRef Name="ResourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_ResourceDetector_tb_InnerUser">
+          <End Role="tb_InnerUser" Type="Self.tb_InnerUser" Multiplicity="1" />
+          <End Role="tb_ResourceDetector" Type="Self.tb_ResourceDetector" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_InnerUser">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="tb_ResourceDetector">
+              <PropertyRef Name="InnerUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_ResourceDetector_tb_Resource">
+          <End Role="tb_Resource" Type="Self.tb_Resource" Multiplicity="1" />
+          <End Role="tb_ResourceDetector" Type="Self.tb_ResourceDetector" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Resource">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_ResourceDetector">
+              <PropertyRef Name="ResourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_ResourceKnowledge_tb_Resource">
+          <End Role="tb_Resource" Type="Self.tb_Resource" Multiplicity="1" />
+          <End Role="tb_ResourceKnowledge" Type="Self.tb_ResourceKnowledge" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Resource">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_ResourceKnowledge">
+              <PropertyRef Name="ResourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_VerifyResource_tb_Resource">
+          <End Role="tb_Resource" Type="Self.tb_Resource" Multiplicity="1" />
+          <End Role="tb_VerifyResource" Type="Self.tb_VerifyResource" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Resource">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_VerifyResource">
+              <PropertyRef Name="ResourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="proc_CourseAnalys" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="proc_LessonSetAnalys" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="proc_pageView" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Columns" Type="nvarchar" Mode="In" />
+          <Parameter Name="TbNames" Type="nvarchar" Mode="In" />
+          <Parameter Name="WhereCondition" Type="nvarchar" Mode="In" />
+          <Parameter Name="OrderColumns" Type="nvarchar" Mode="In" />
+          <Parameter Name="IsOrderByASC" Type="int" Mode="In" />
+          <Parameter Name="CurrentPageIndex" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+          <Parameter Name="TotalPages" Type="int" Mode="InOut" />
+          <Parameter Name="TotalRecords" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="proc_ResourceAnalys" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="proc_ResourceCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="proc_Search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Values" Type="nvarchar" Mode="In" />
+          <Parameter Name="PageIndex" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+        </Function>
+        <Function Name="proc_SearchUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Values" Type="nvarchar" Mode="In" />
+          <Parameter Name="PageIndex" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+        </Function>
+        <Function Name="proc_SearchVerify" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Values" Type="nvarchar" Mode="In" />
+          <Parameter Name="PageIndex" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="MODResourceModelStoreContainer">
+          <EntitySet Name="tb_Course" EntityType="Self.tb_Course" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_CourseApp" EntityType="Self.tb_CourseApp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Drip" EntityType="Self.tb_Drip" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Edition" EntityType="Self.tb_Edition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Evidence" EntityType="Self.tb_Evidence" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_InnerUser" EntityType="Self.tb_InnerUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_LessonSet" EntityType="Self.tb_LessonSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Resource" EntityType="Self.tb_Resource" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_ResourceModel" EntityType="Self.tb_ResourceModel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Subject" EntityType="Self.tb_Subject" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_TextBook" EntityType="Self.tb_TextBook" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_VerifyResource" EntityType="Self.tb_VerifyResource" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBA_LessonSet" EntityType="Self.TBA_LessonSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBC_ResourceTypeEdition" EntityType="Self.TBC_ResourceTypeEdition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBC_ResourceTypeGrade" EntityType="Self.TBC_ResourceTypeGrade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBC_SubjectGrade" EntityType="Self.TBC_SubjectGrade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RsTempTable" EntityType="Self.RsTempTable" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [RsTempTable].[ID] AS [ID], 
+    [RsTempTable].[Number] AS [Number], 
+    [RsTempTable].[Title] AS [Title], 
+    [RsTempTable].[SchoolStage] AS [SchoolStage], 
+    [RsTempTable].[Grade] AS [Grade], 
+    [RsTempTable].[Subject] AS [Subject], 
+    [RsTempTable].[Edition] AS [Edition], 
+    [RsTempTable].[BookReel] AS [BookReel], 
+    [RsTempTable].[Catalog] AS [Catalog], 
+    [RsTempTable].[ResourceType] AS [ResourceType], 
+    [RsTempTable].[ResourceStyle] AS [ResourceStyle], 
+    [RsTempTable].[ResourceLevel] AS [ResourceLevel], 
+    [RsTempTable].[KeyWords] AS [KeyWords], 
+    [RsTempTable].[TeachingStep] AS [TeachingStep], 
+    [RsTempTable].[TeachingModules] AS [TeachingModules], 
+    [RsTempTable].[TeachingStyle] AS [TeachingStyle], 
+    [RsTempTable].[Applicable] AS [Applicable], 
+    [RsTempTable].[FileID] AS [FileID], 
+    [RsTempTable].[Description] AS [Description], 
+    [RsTempTable].[IsVerify] AS [IsVerify], 
+    [RsTempTable].[Purview] AS [Purview], 
+    [RsTempTable].[UploadDate] AS [UploadDate], 
+    [RsTempTable].[UploadUser] AS [UploadUser], 
+    [RsTempTable].[IsDelete] AS [IsDelete], 
+    [RsTempTable].[DownCounts] AS [DownCounts], 
+    [RsTempTable].[ScanCounts] AS [ScanCounts], 
+    [RsTempTable].[FileType] AS [FileType], 
+    [RsTempTable].[BreviaryImgUrl] AS [BreviaryImgUrl], 
+    [RsTempTable].[ResourceSize] AS [ResourceSize], 
+    [RsTempTable].[IsRecommend] AS [IsRecommend], 
+    [RsTempTable].[MaterialID] AS [MaterialID], 
+    [RsTempTable].[ComeFrom] AS [ComeFrom], 
+    [RsTempTable].[Copyright] AS [Copyright], 
+    [RsTempTable].[CopyrightName] AS [CopyrightName], 
+    [RsTempTable].[Sort] AS [Sort]
+    FROM [dbo].[RsTempTable] AS [RsTempTable]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tb_Course_back" EntityType="Self.tb_Course_back" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tb_Course_back].[ID] AS [ID], 
+    [tb_Course_back].[CourseName] AS [CourseName], 
+    [tb_Course_back].[Version] AS [Version], 
+    [tb_Course_back].[EditionID] AS [EditionID], 
+    [tb_Course_back].[ImgPath] AS [ImgPath], 
+    [tb_Course_back].[CoursePath] AS [CoursePath], 
+    [tb_Course_back].[Status] AS [Status], 
+    [tb_Course_back].[CourseKey] AS [CourseKey], 
+    [tb_Course_back].[Coursetype] AS [Coursetype], 
+    [tb_Course_back].[Grade] AS [Grade], 
+    [tb_Course_back].[Subject] AS [Subject]
+    FROM [dbo].[tb_Course_back] AS [tb_Course_back]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tb_ResourceApplicable" EntityType="Self.tb_ResourceApplicable" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tb_ResourceApplicable].[ResourceID] AS [ResourceID], 
+    [tb_ResourceApplicable].[ApplicableID] AS [ApplicableID]
+    FROM [dbo].[tb_ResourceApplicable] AS [tb_ResourceApplicable]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tb_ResourceCreator" EntityType="Self.tb_ResourceCreator" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tb_ResourceCreator].[ResourceID] AS [ResourceID], 
+    [tb_ResourceCreator].[InnerUserID] AS [InnerUserID]
+    FROM [dbo].[tb_ResourceCreator] AS [tb_ResourceCreator]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tb_ResourceDetector" EntityType="Self.tb_ResourceDetector" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tb_ResourceDetector].[ResourceID] AS [ResourceID], 
+    [tb_ResourceDetector].[InnerUserID] AS [InnerUserID]
+    FROM [dbo].[tb_ResourceDetector] AS [tb_ResourceDetector]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tb_ResourceKnowledge" EntityType="Self.tb_ResourceKnowledge" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tb_ResourceKnowledge].[ResourceID] AS [ResourceID], 
+    [tb_ResourceKnowledge].[KnowledgeID] AS [KnowledgeID]
+    FROM [dbo].[tb_ResourceKnowledge] AS [tb_ResourceKnowledge]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tb_ResourceTeachingModule" EntityType="Self.tb_ResourceTeachingModule" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tb_ResourceTeachingModule].[ResourceID] AS [ResourceID], 
+    [tb_ResourceTeachingModule].[TeachingModuleID] AS [TeachingModuleID]
+    FROM [dbo].[tb_ResourceTeachingModule] AS [tb_ResourceTeachingModule]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TBA_ResourceTeaching" EntityType="Self.TBA_ResourceTeaching" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TBA_ResourceTeaching].[ID] AS [ID], 
+    [TBA_ResourceTeaching].[SchoolStageID] AS [SchoolStageID], 
+    [TBA_ResourceTeaching].[GradeID] AS [GradeID], 
+    [TBA_ResourceTeaching].[SubjectID] AS [SubjectID], 
+    [TBA_ResourceTeaching].[EditionID] AS [EditionID], 
+    [TBA_ResourceTeaching].[BookReelID] AS [BookReelID], 
+    [TBA_ResourceTeaching].[TotalCounts] AS [TotalCounts], 
+    [TBA_ResourceTeaching].[TotalSize] AS [TotalSize], 
+    [TBA_ResourceTeaching].[CountsLess1M] AS [CountsLess1M], 
+    [TBA_ResourceTeaching].[Counts1To10M] AS [Counts1To10M], 
+    [TBA_ResourceTeaching].[Counts10To100M] AS [Counts10To100M], 
+    [TBA_ResourceTeaching].[CountsOver100M] AS [CountsOver100M], 
+    [TBA_ResourceTeaching].[CountsKJ] AS [CountsKJ], 
+    [TBA_ResourceTeaching].[CountsHDKJ] AS [CountsHDKJ], 
+    [TBA_ResourceTeaching].[CountsTP] AS [CountsTP], 
+    [TBA_ResourceTeaching].[CountsDH] AS [CountsDH], 
+    [TBA_ResourceTeaching].[CountsYP] AS [CountsYP], 
+    [TBA_ResourceTeaching].[CountsWB] AS [CountsWB], 
+    [TBA_ResourceTeaching].[CountsSJ] AS [CountsSJ], 
+    [TBA_ResourceTeaching].[CountsSP] AS [CountsSP], 
+    [TBA_ResourceTeaching].[UploadDate] AS [UploadDate], 
+    [TBA_ResourceTeaching].[AnalysDate] AS [AnalysDate]
+    FROM [dbo].[TBA_ResourceTeaching] AS [TBA_ResourceTeaching]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_tb_ResourceCreator_tb_InnerUser" Association="Self.FK_tb_ResourceCreator_tb_InnerUser">
+            <End Role="tb_InnerUser" EntitySet="tb_InnerUser" />
+            <End Role="tb_ResourceCreator" EntitySet="tb_ResourceCreator" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_ResourceCreator_tb_Resource" Association="Self.FK_tb_ResourceCreator_tb_Resource">
+            <End Role="tb_Resource" EntitySet="tb_Resource" />
+            <End Role="tb_ResourceCreator" EntitySet="tb_ResourceCreator" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_ResourceDetector_tb_InnerUser" Association="Self.FK_tb_ResourceDetector_tb_InnerUser">
+            <End Role="tb_InnerUser" EntitySet="tb_InnerUser" />
+            <End Role="tb_ResourceDetector" EntitySet="tb_ResourceDetector" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_ResourceDetector_tb_Resource" Association="Self.FK_tb_ResourceDetector_tb_Resource">
+            <End Role="tb_Resource" EntitySet="tb_Resource" />
+            <End Role="tb_ResourceDetector" EntitySet="tb_ResourceDetector" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_ResourceKnowledge_tb_Resource" Association="Self.FK_tb_ResourceKnowledge_tb_Resource">
+            <End Role="tb_Resource" EntitySet="tb_Resource" />
+            <End Role="tb_ResourceKnowledge" EntitySet="tb_ResourceKnowledge" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_VerifyResource_tb_Resource" Association="Self.FK_tb_VerifyResource_tb_Resource">
+            <End Role="tb_Resource" EntitySet="tb_Resource" />
+            <End Role="tb_VerifyResource" EntitySet="tb_VerifyResource" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MODResourceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tb_Course">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CourseName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Version" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EditionID" Type="Int32" Nullable="false" />
+          <Property Name="ImgPath" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CoursePath" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CourseKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Coursetype" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Grade" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Subject" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FileSize" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="TimeSpan" Type="Int32" />
+          <Property Name="BookReel" Type="Int32" />
+          <Property Name="SchoolStage" Type="Int32" />
+          <Property Name="UploadDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tb_CourseApp">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CourseID" Type="Int32" Nullable="false" />
+          <Property Name="AppName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Version" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Folder" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OrderType" Type="Int32" Nullable="false" />
+          <Property Name="AppType" Type="Int32" Nullable="false" />
+          <Property Name="AppKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tb_Drip">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClssId" Type="Int32" />
+          <Property Name="PageNum" Type="Int32" />
+          <Property Name="JsStringUrl" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tb_Edition">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="SubjectID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="EditionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SubjectID" Type="Int32" Nullable="false" />
+          <Property Name="EType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tb_Evidence">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ToKen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsWorking" Type="Int32" />
+          <Property Name="IsDeleted" Type="Int32" />
+          <Property Name="Remark" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ErrorUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Ke" Type="Int32" />
+          <Property Name="Yun" Type="Int32" />
+          <Property Name="Movie" Type="Int32" />
+          <Property Name="IsBuy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tb_InnerUser">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserState" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tb_Resource" Relationship="Self.tb_ResourceCreator" FromRole="tb_InnerUser" ToRole="tb_Resource" />
+          <NavigationProperty Name="tb_Resource1" Relationship="Self.tb_ResourceDetector" FromRole="tb_InnerUser" ToRole="tb_Resource" />
+        </EntityType>
+        <EntityType Name="tb_LessonSet">
+          <Key>
+            <PropertyRef Name="LessonSetID" />
+          </Key>
+          <Property Name="LessonSetID" Type="Guid" Nullable="false" />
+          <Property Name="AttachID" Type="Guid" />
+          <Property Name="LessonSetName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="AttachName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Stage" Type="Int32" />
+          <Property Name="Subject" Type="Int32" />
+          <Property Name="Edition" Type="Int32" />
+          <Property Name="Grade" Type="Int32" />
+          <Property Name="Year" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CreatTime" Type="DateTime" Precision="3" />
+          <Property Name="FileType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IsDelete" Type="Int32" />
+          <Property Name="BookReel" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tb_Resource">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Number" Type="Double" />
+          <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SchoolStage" Type="Int32" />
+          <Property Name="Grade" Type="Int32" />
+          <Property Name="Subject" Type="Int32" />
+          <Property Name="Edition" Type="Int32" />
+          <Property Name="BookReel" Type="Int32" />
+          <Property Name="Catalog" Type="Int32" />
+          <Property Name="ResourceType" Type="Int32" />
+          <Property Name="ResourceStyle" Type="Int32" />
+          <Property Name="ResourceLevel" Type="Int32" />
+          <Property Name="KeyWords" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="TeachingStep" Type="Int32" />
+          <Property Name="TeachingStyle" Type="Int32" />
+          <Property Name="FileID" Type="Guid" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="IsVerify" Type="Int32" />
+          <Property Name="Purview" Type="Int32" />
+          <Property Name="UploadDate" Type="DateTime" Precision="3" />
+          <Property Name="UploadUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="IsDelete" Type="Int32" />
+          <Property Name="DownCounts" Type="Int32" />
+          <Property Name="ScanCounts" Type="Int32" />
+          <Property Name="FileType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BreviaryImgUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceSize" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IsRecommend" Type="Int32" />
+          <Property Name="MaterialID" Type="Guid" />
+          <Property Name="ComeFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AppraisedCounts" Type="Int32" />
+          <Property Name="CollectCounts" Type="Int32" />
+          <Property Name="TeachingModules" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Applicable" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="Copyright" Type="Int32" />
+          <Property Name="CopyrightName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sort" Type="Int64" Nullable="false" />
+          <Property Name="TimeSpan" Type="Int32" />
+          <Property Name="ResourceClass" Type="Int32" />
+          <NavigationProperty Name="tb_ResourceKnowledge" Relationship="Self.FK_tb_ResourceKnowledge_tb_Resource" FromRole="tb_Resource" ToRole="tb_ResourceKnowledge" />
+          <NavigationProperty Name="tb_VerifyResource" Relationship="Self.FK_tb_VerifyResource_tb_Resource" FromRole="tb_Resource" ToRole="tb_VerifyResource" />
+          <NavigationProperty Name="tb_InnerUser" Relationship="Self.tb_ResourceCreator" FromRole="tb_Resource" ToRole="tb_InnerUser" />
+          <NavigationProperty Name="tb_InnerUser1" Relationship="Self.tb_ResourceDetector" FromRole="tb_Resource" ToRole="tb_InnerUser" />
+        </EntityType>
+        <EntityType Name="tb_ResourceModel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_Subject">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="SubjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_TextBook">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClssId" Type="Int32" />
+          <Property Name="ClssName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TextBookPath" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ThumbnailsPath" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tb_VerifyResource">
+          <Key>
+            <PropertyRef Name="ResourceID" />
+          </Key>
+          <Property Name="ResourceID" Type="Guid" Nullable="false" />
+          <Property Name="VerifyState" Type="Int32" Nullable="false" />
+          <Property Name="VerifyDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="VerifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_Resource" Relationship="Self.FK_tb_VerifyResource_tb_Resource" FromRole="tb_VerifyResource" ToRole="tb_Resource" />
+        </EntityType>
+        <EntityType Name="TBA_LessonSet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubjectID" Type="Int32" />
+          <Property Name="SchoolStageID" Type="Int32" />
+          <Property Name="EditionID" Type="Int32" />
+          <Property Name="TotalCounts" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TotalTimeSpan" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TotalSize" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UploadDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TBC_ResourceTypeEdition">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeID" Type="Int32" Nullable="false" />
+          <Property Name="StyleID" Type="Int32" Nullable="false" />
+          <Property Name="EditionID" Type="Int32" Nullable="false" />
+          <Property Name="SchoolStageID" Type="Int32" Nullable="false" />
+          <Property Name="SubjectID" Type="Int32" Nullable="false" />
+          <Property Name="TotalCounts" Type="Int32" />
+          <Property Name="CountDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TBC_ResourceTypeGrade">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeID" Type="Int32" Nullable="false" />
+          <Property Name="StyleID" Type="Int32" Nullable="false" />
+          <Property Name="GradeID" Type="Int32" Nullable="false" />
+          <Property Name="SchoolStageID" Type="Int32" Nullable="false" />
+          <Property Name="TotalCounts" Type="Int32" />
+          <Property Name="CountDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TBC_SubjectGrade">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubjectID" Type="Int32" Nullable="false" />
+          <Property Name="GradeID" Type="Int32" Nullable="false" />
+          <Property Name="SchoolStageID" Type="Int32" Nullable="false" />
+          <Property Name="TotalCounts" Type="Int32" />
+          <Property Name="CountDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="RsTempTable">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="FileID" />
+            <PropertyRef Name="Sort" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Number" Type="Double" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SchoolStage" Type="Int32" />
+          <Property Name="Grade" Type="Int32" />
+          <Property Name="Subject" Type="Int32" />
+          <Property Name="Edition" Type="Int32" />
+          <Property Name="BookReel" Type="Int32" />
+          <Property Name="Catalog" Type="Int32" />
+          <Property Name="ResourceType" Type="Int32" />
+          <Property Name="ResourceStyle" Type="Int32" />
+          <Property Name="ResourceLevel" Type="Int32" />
+          <Property Name="KeyWords" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TeachingStep" Type="Int32" />
+          <Property Name="TeachingModules" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TeachingStyle" Type="Int32" />
+          <Property Name="Applicable" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FileID" Type="Guid" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="IsVerify" Type="Int32" />
+          <Property Name="Purview" Type="Int32" />
+          <Property Name="UploadDate" Type="DateTime" Precision="3" />
+          <Property Name="UploadUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="IsDelete" Type="Int32" />
+          <Property Name="DownCounts" Type="Int32" />
+          <Property Name="ScanCounts" Type="Int32" />
+          <Property Name="FileType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BreviaryImgUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceSize" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsRecommend" Type="Int32" />
+          <Property Name="MaterialID" Type="Guid" />
+          <Property Name="ComeFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Copyright" Type="Int32" />
+          <Property Name="CopyrightName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sort" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_Course_back">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="CourseName" />
+            <PropertyRef Name="Version" />
+            <PropertyRef Name="EditionID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CourseName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Version" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EditionID" Type="Int32" Nullable="false" />
+          <Property Name="ImgPath" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CoursePath" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CourseKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Coursetype" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Grade" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Subject" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tb_ResourceApplicable">
+          <Key>
+            <PropertyRef Name="ResourceID" />
+            <PropertyRef Name="ApplicableID" />
+          </Key>
+          <Property Name="ResourceID" Type="Guid" Nullable="false" />
+          <Property Name="ApplicableID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_ResourceKnowledge">
+          <Key>
+            <PropertyRef Name="ResourceID" />
+            <PropertyRef Name="KnowledgeID" />
+          </Key>
+          <Property Name="ResourceID" Type="Guid" Nullable="false" />
+          <Property Name="KnowledgeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tb_Resource" Relationship="Self.FK_tb_ResourceKnowledge_tb_Resource" FromRole="tb_ResourceKnowledge" ToRole="tb_Resource" />
+        </EntityType>
+        <EntityType Name="tb_ResourceTeachingModule">
+          <Key>
+            <PropertyRef Name="ResourceID" />
+            <PropertyRef Name="TeachingModuleID" />
+          </Key>
+          <Property Name="ResourceID" Type="Guid" Nullable="false" />
+          <Property Name="TeachingModuleID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBA_ResourceTeaching">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SchoolStageID" Type="Int32" />
+          <Property Name="GradeID" Type="Int32" />
+          <Property Name="SubjectID" Type="Int32" />
+          <Property Name="EditionID" Type="Int32" />
+          <Property Name="BookReelID" Type="Int32" />
+          <Property Name="TotalCounts" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TotalSize" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CountsLess1M" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Counts1To10M" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Counts10To100M" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CountsOver100M" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CountsKJ" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CountsHDKJ" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CountsTP" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CountsDH" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CountsYP" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CountsWB" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CountsSJ" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CountsSP" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UploadDate" Type="DateTime" Precision="3" />
+          <Property Name="AnalysDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <Association Name="FK_tb_ResourceKnowledge_tb_Resource">
+          <End Role="tb_Resource" Type="Self.tb_Resource" Multiplicity="1" />
+          <End Role="tb_ResourceKnowledge" Type="Self.tb_ResourceKnowledge" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Resource">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_ResourceKnowledge">
+              <PropertyRef Name="ResourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_VerifyResource_tb_Resource">
+          <End Role="tb_Resource" Type="Self.tb_Resource" Multiplicity="1" />
+          <End Role="tb_VerifyResource" Type="Self.tb_VerifyResource" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Resource">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_VerifyResource">
+              <PropertyRef Name="ResourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tb_ResourceCreator">
+          <End Role="tb_InnerUser" Type="Self.tb_InnerUser" Multiplicity="*" />
+          <End Role="tb_Resource" Type="Self.tb_Resource" Multiplicity="*" />
+        </Association>
+        <Association Name="tb_ResourceDetector">
+          <End Role="tb_InnerUser" Type="Self.tb_InnerUser" Multiplicity="*" />
+          <End Role="tb_Resource" Type="Self.tb_Resource" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="MODResourceEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_Course" EntityType="Self.tb_Course" />
+          <EntitySet Name="tb_CourseApp" EntityType="Self.tb_CourseApp" />
+          <EntitySet Name="tb_Drip" EntityType="Self.tb_Drip" />
+          <EntitySet Name="tb_Edition" EntityType="Self.tb_Edition" />
+          <EntitySet Name="tb_Evidence" EntityType="Self.tb_Evidence" />
+          <EntitySet Name="tb_InnerUser" EntityType="Self.tb_InnerUser" />
+          <EntitySet Name="tb_LessonSet" EntityType="Self.tb_LessonSet" />
+          <EntitySet Name="tb_Resource" EntityType="Self.tb_Resource" />
+          <EntitySet Name="tb_ResourceModel" EntityType="Self.tb_ResourceModel" />
+          <EntitySet Name="tb_Subject" EntityType="Self.tb_Subject" />
+          <EntitySet Name="tb_TextBook" EntityType="Self.tb_TextBook" />
+          <EntitySet Name="tb_VerifyResource" EntityType="Self.tb_VerifyResource" />
+          <EntitySet Name="TBA_LessonSet" EntityType="Self.TBA_LessonSet" />
+          <EntitySet Name="TBC_ResourceTypeEdition" EntityType="Self.TBC_ResourceTypeEdition" />
+          <EntitySet Name="TBC_ResourceTypeGrade" EntityType="Self.TBC_ResourceTypeGrade" />
+          <EntitySet Name="TBC_SubjectGrade" EntityType="Self.TBC_SubjectGrade" />
+          <EntitySet Name="RsTempTable" EntityType="Self.RsTempTable" />
+          <EntitySet Name="tb_Course_back" EntityType="Self.tb_Course_back" />
+          <EntitySet Name="tb_ResourceApplicable" EntityType="Self.tb_ResourceApplicable" />
+          <EntitySet Name="tb_ResourceKnowledge" EntityType="Self.tb_ResourceKnowledge" />
+          <EntitySet Name="tb_ResourceTeachingModule" EntityType="Self.tb_ResourceTeachingModule" />
+          <EntitySet Name="TBA_ResourceTeaching" EntityType="Self.TBA_ResourceTeaching" />
+          <AssociationSet Name="FK_tb_ResourceKnowledge_tb_Resource" Association="Self.FK_tb_ResourceKnowledge_tb_Resource">
+            <End Role="tb_Resource" EntitySet="tb_Resource" />
+            <End Role="tb_ResourceKnowledge" EntitySet="tb_ResourceKnowledge" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_VerifyResource_tb_Resource" Association="Self.FK_tb_VerifyResource_tb_Resource">
+            <End Role="tb_Resource" EntitySet="tb_Resource" />
+            <End Role="tb_VerifyResource" EntitySet="tb_VerifyResource" />
+          </AssociationSet>
+          <AssociationSet Name="tb_ResourceCreator" Association="Self.tb_ResourceCreator">
+            <End Role="tb_InnerUser" EntitySet="tb_InnerUser" />
+            <End Role="tb_Resource" EntitySet="tb_Resource" />
+          </AssociationSet>
+          <AssociationSet Name="tb_ResourceDetector" Association="Self.tb_ResourceDetector">
+            <End Role="tb_InnerUser" EntitySet="tb_InnerUser" />
+            <End Role="tb_Resource" EntitySet="tb_Resource" />
+          </AssociationSet>
+          <FunctionImport Name="proc_CourseAnalys" />
+          <FunctionImport Name="proc_LessonSetAnalys" />
+          <FunctionImport Name="proc_pageView" ReturnType="Collection(MODResourceModel.proc_pageView_Result)">
+            <Parameter Name="Columns" Mode="In" Type="String" />
+            <Parameter Name="TbNames" Mode="In" Type="String" />
+            <Parameter Name="WhereCondition" Mode="In" Type="String" />
+            <Parameter Name="OrderColumns" Mode="In" Type="String" />
+            <Parameter Name="IsOrderByASC" Mode="In" Type="Int32" />
+            <Parameter Name="CurrentPageIndex" Mode="In" Type="Int32" />
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+            <Parameter Name="TotalPages" Mode="InOut" Type="Int32" />
+            <Parameter Name="TotalRecords" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="proc_ResourceAnalys" />
+          <FunctionImport Name="proc_ResourceCount" />
+          <FunctionImport Name="proc_Search" ReturnType="Collection(MODResourceModel.proc_Search_Result)">
+            <Parameter Name="Values" Mode="In" Type="String" />
+            <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="proc_SearchUpdate" ReturnType="Collection(MODResourceModel.proc_SearchUpdate_Result)">
+            <Parameter Name="Values" Mode="In" Type="String" />
+            <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="proc_SearchVerify" ReturnType="Collection(MODResourceModel.proc_SearchVerify_Result)">
+            <Parameter Name="Values" Mode="In" Type="String" />
+            <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="proc_pageView_Result">
+          <Property Type="Int32" Name="total" Nullable="true" />
+          <Property Type="Int32" Name="totalpage" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="proc_Search_Result">
+          <Property Type="Int64" Name="RowNum" Nullable="true" />
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="Double" Name="Number" Nullable="true" />
+          <Property Type="String" Name="Title" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="SchoolStage" Nullable="true" />
+          <Property Type="Int32" Name="Grade" Nullable="true" />
+          <Property Type="Int32" Name="Subject" Nullable="true" />
+          <Property Type="Int32" Name="Edition" Nullable="true" />
+          <Property Type="Int32" Name="BookReel" Nullable="true" />
+          <Property Type="Int32" Name="Catalog" Nullable="true" />
+          <Property Type="Int32" Name="ResourceType" Nullable="true" />
+          <Property Type="Int32" Name="ResourceStyle" Nullable="true" />
+          <Property Type="Int32" Name="ResourceLevel" Nullable="true" />
+          <Property Type="String" Name="KeyWords" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="TeachingStep" Nullable="true" />
+          <Property Type="Int32" Name="TeachingStyle" Nullable="true" />
+          <Property Type="Guid" Name="FileID" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="IsVerify" Nullable="true" />
+          <Property Type="Int32" Name="Purview" Nullable="true" />
+          <Property Type="DateTime" Name="UploadDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="UploadUser" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="IsDelete" Nullable="true" />
+          <Property Type="Int32" Name="DownCounts" Nullable="true" />
+          <Property Type="Int32" Name="ScanCounts" Nullable="true" />
+          <Property Type="String" Name="FileType" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="BreviaryImgUrl" Nullable="true" MaxLength="500" />
+          <Property Type="Decimal" Name="ResourceSize" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="IsRecommend" Nullable="true" />
+          <Property Type="Guid" Name="MaterialID" Nullable="true" />
+          <Property Type="String" Name="ComeFrom" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="AppraisedCounts" Nullable="true" />
+          <Property Type="Int32" Name="CollectCounts" Nullable="true" />
+          <Property Type="String" Name="TeachingModules" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Applicable" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="ModifyDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Copyright" Nullable="true" />
+          <Property Type="String" Name="CopyrightName" Nullable="true" MaxLength="50" />
+          <Property Type="Int64" Name="Sort" Nullable="false" />
+          <Property Type="Int32" Name="TimeSpan" Nullable="true" />
+          <Property Type="Int32" Name="ResourceClass" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="proc_SearchUpdate_Result">
+          <Property Type="Int64" Name="RowNum" Nullable="true" />
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="Double" Name="Number" Nullable="true" />
+          <Property Type="String" Name="Title" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="SchoolStage" Nullable="true" />
+          <Property Type="Int32" Name="Grade" Nullable="true" />
+          <Property Type="Int32" Name="Subject" Nullable="true" />
+          <Property Type="Int32" Name="Edition" Nullable="true" />
+          <Property Type="Int32" Name="BookReel" Nullable="true" />
+          <Property Type="Int32" Name="Catalog" Nullable="true" />
+          <Property Type="Int32" Name="ResourceType" Nullable="true" />
+          <Property Type="Int32" Name="ResourceStyle" Nullable="true" />
+          <Property Type="Int32" Name="ResourceLevel" Nullable="true" />
+          <Property Type="String" Name="KeyWords" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="TeachingStep" Nullable="true" />
+          <Property Type="Int32" Name="TeachingStyle" Nullable="true" />
+          <Property Type="Guid" Name="FileID" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="IsVerify" Nullable="true" />
+          <Property Type="Int32" Name="Purview" Nullable="true" />
+          <Property Type="DateTime" Name="UploadDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="UploadUser" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="IsDelete" Nullable="true" />
+          <Property Type="Int32" Name="DownCounts" Nullable="true" />
+          <Property Type="Int32" Name="ScanCounts" Nullable="true" />
+          <Property Type="String" Name="FileType" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="BreviaryImgUrl" Nullable="true" MaxLength="500" />
+          <Property Type="Decimal" Name="ResourceSize" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="IsRecommend" Nullable="true" />
+          <Property Type="Guid" Name="MaterialID" Nullable="true" />
+          <Property Type="String" Name="ComeFrom" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="AppraisedCounts" Nullable="true" />
+          <Property Type="Int32" Name="CollectCounts" Nullable="true" />
+          <Property Type="String" Name="TeachingModules" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Applicable" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="ModifyDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Copyright" Nullable="true" />
+          <Property Type="String" Name="CopyrightName" Nullable="true" MaxLength="50" />
+          <Property Type="Int64" Name="Sort" Nullable="false" />
+          <Property Type="Int32" Name="TimeSpan" Nullable="true" />
+          <Property Type="Int32" Name="ResourceClass" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="proc_SearchVerify_Result">
+          <Property Type="Int64" Name="RowNum" Nullable="true" />
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="Double" Name="Number" Nullable="true" />
+          <Property Type="String" Name="Title" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="SchoolStage" Nullable="true" />
+          <Property Type="Int32" Name="Grade" Nullable="true" />
+          <Property Type="Int32" Name="Subject" Nullable="true" />
+          <Property Type="Int32" Name="Edition" Nullable="true" />
+          <Property Type="Int32" Name="BookReel" Nullable="true" />
+          <Property Type="Int32" Name="Catalog" Nullable="true" />
+          <Property Type="Int32" Name="ResourceType" Nullable="true" />
+          <Property Type="Int32" Name="ResourceStyle" Nullable="true" />
+          <Property Type="Int32" Name="ResourceLevel" Nullable="true" />
+          <Property Type="String" Name="KeyWords" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="TeachingStep" Nullable="true" />
+          <Property Type="Int32" Name="TeachingStyle" Nullable="true" />
+          <Property Type="Guid" Name="FileID" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="IsVerify" Nullable="true" />
+          <Property Type="Int32" Name="Purview" Nullable="true" />
+          <Property Type="DateTime" Name="UploadDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="UploadUser" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="IsDelete" Nullable="true" />
+          <Property Type="Int32" Name="DownCounts" Nullable="true" />
+          <Property Type="Int32" Name="ScanCounts" Nullable="true" />
+          <Property Type="String" Name="FileType" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="BreviaryImgUrl" Nullable="true" MaxLength="500" />
+          <Property Type="Decimal" Name="ResourceSize" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="IsRecommend" Nullable="true" />
+          <Property Type="Guid" Name="MaterialID" Nullable="true" />
+          <Property Type="String" Name="ComeFrom" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="AppraisedCounts" Nullable="true" />
+          <Property Type="Int32" Name="CollectCounts" Nullable="true" />
+          <Property Type="String" Name="TeachingModules" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Applicable" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="ModifyDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Copyright" Nullable="true" />
+          <Property Type="String" Name="CopyrightName" Nullable="true" MaxLength="50" />
+          <Property Type="Int64" Name="Sort" Nullable="false" />
+          <Property Type="Int32" Name="TimeSpan" Nullable="true" />
+          <Property Type="Int32" Name="ResourceClass" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MODResourceModelStoreContainer" CdmEntityContainer="MODResourceEntities">
+          <EntitySetMapping Name="tb_Course">
+            <EntityTypeMapping TypeName="MODResourceModel.tb_Course">
+              <MappingFragment StoreEntitySet="tb_Course">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="EditionID" ColumnName="EditionID" />
+                <ScalarProperty Name="ImgPath" ColumnName="ImgPath" />
+                <ScalarProperty Name="CoursePath" ColumnName="CoursePath" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CourseKey" ColumnName="CourseKey" />
+                <ScalarProperty Name="Coursetype" ColumnName="Coursetype" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+                <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+                <ScalarProperty Name="BookReel" ColumnName="BookReel" />
+                <ScalarProperty Name="SchoolStage" ColumnName="SchoolStage" />
+                <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_CourseApp">
+            <EntityTypeMapping TypeName="MODResourceModel.tb_CourseApp">
+              <MappingFragment StoreEntitySet="tb_CourseApp">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+                <ScalarProperty Name="AppName" ColumnName="AppName" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="Folder" ColumnName="Folder" />
+                <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+                <ScalarProperty Name="AppType" ColumnName="AppType" />
+                <ScalarProperty Name="AppKey" ColumnName="AppKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Drip">
+            <EntityTypeMapping TypeName="MODResourceModel.tb_Drip">
+              <MappingFragment StoreEntitySet="tb_Drip">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ClssId" ColumnName="ClssId" />
+                <ScalarProperty Name="PageNum" ColumnName="PageNum" />
+                <ScalarProperty Name="JsStringUrl" ColumnName="JsStringUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Edition">
+            <EntityTypeMapping TypeName="MODResourceModel.tb_Edition">
+              <MappingFragment StoreEntitySet="tb_Edition">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="EditionName" ColumnName="EditionName" />
+                <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+                <ScalarProperty Name="EType" ColumnName="EType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Evidence">
+            <EntityTypeMapping TypeName="MODResourceModel.tb_Evidence">
+              <MappingFragment StoreEntitySet="tb_Evidence">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ToKen" ColumnName="ToKen" />
+                <ScalarProperty Name="IsWorking" ColumnName="IsWorking" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="ErrorUrl" ColumnName="ErrorUrl" />
+                <ScalarProperty Name="Ke" ColumnName="Ke" />
+                <ScalarProperty Name="Yun" ColumnName="Yun" />
+                <ScalarProperty Name="Movie" ColumnName="Movie" />
+                <ScalarProperty Name="IsBuy" ColumnName="IsBuy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_InnerUser">
+            <EntityTypeMapping TypeName="MODResourceModel.tb_InnerUser">
+              <MappingFragment StoreEntitySet="tb_InnerUser">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserState" ColumnName="UserState" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_LessonSet">
+            <EntityTypeMapping TypeName="MODResourceModel.tb_LessonSet">
+              <MappingFragment StoreEntitySet="tb_LessonSet">
+                <ScalarProperty Name="LessonSetID" ColumnName="LessonSetID" />
+                <ScalarProperty Name="AttachID" ColumnName="AttachID" />
+                <ScalarProperty Name="LessonSetName" ColumnName="LessonSetName" />
+                <ScalarProperty Name="AttachName" ColumnName="AttachName" />
+                <ScalarProperty Name="Stage" ColumnName="Stage" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Edition" ColumnName="Edition" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="CreatTime" ColumnName="CreatTime" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="BookReel" ColumnName="BookReel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Resource">
+            <EntityTypeMapping TypeName="MODResourceModel.tb_Resource">
+              <MappingFragment StoreEntitySet="tb_Resource">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SchoolStage" ColumnName="SchoolStage" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Edition" ColumnName="Edition" />
+                <ScalarProperty Name="BookReel" ColumnName="BookReel" />
+                <ScalarProperty Name="Catalog" ColumnName="Catalog" />
+                <ScalarProperty Name="ResourceType" ColumnName="ResourceType" />
+                <ScalarProperty Name="ResourceStyle" ColumnName="ResourceStyle" />
+                <ScalarProperty Name="ResourceLevel" ColumnName="ResourceLevel" />
+                <ScalarProperty Name="KeyWords" ColumnName="KeyWords" />
+                <ScalarProperty Name="TeachingStep" ColumnName="TeachingStep" />
+                <ScalarProperty Name="TeachingStyle" ColumnName="TeachingStyle" />
+                <ScalarProperty Name="FileID" ColumnName="FileID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsVerify" ColumnName="IsVerify" />
+                <ScalarProperty Name="Purview" ColumnName="Purview" />
+                <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+                <ScalarProperty Name="UploadUser" ColumnName="UploadUser" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="DownCounts" ColumnName="DownCounts" />
+                <ScalarProperty Name="ScanCounts" ColumnName="ScanCounts" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="BreviaryImgUrl" ColumnName="BreviaryImgUrl" />
+                <ScalarProperty Name="ResourceSize" ColumnName="ResourceSize" />
+                <ScalarProperty Name="IsRecommend" ColumnName="IsRecommend" />
+                <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+                <ScalarProperty Name="ComeFrom" ColumnName="ComeFrom" />
+                <ScalarProperty Name="AppraisedCounts" ColumnName="AppraisedCounts" />
+                <ScalarProperty Name="CollectCounts" ColumnName="CollectCounts" />
+                <ScalarProperty Name="TeachingModules" ColumnName="TeachingModules" />
+                <ScalarProperty Name="Applicable" ColumnName="Applicable" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="Copyright" ColumnName="Copyright" />
+                <ScalarProperty Name="CopyrightName" ColumnName="CopyrightName" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+                <ScalarProperty Name="ResourceClass" ColumnName="ResourceClass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_ResourceModel">
+            <EntityTypeMapping TypeName="MODResourceModel.tb_ResourceModel">
+              <MappingFragment StoreEntitySet="tb_ResourceModel">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Subject">
+            <EntityTypeMapping TypeName="MODResourceModel.tb_Subject">
+              <MappingFragment StoreEntitySet="tb_Subject">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_TextBook">
+            <EntityTypeMapping TypeName="MODResourceModel.tb_TextBook">
+              <MappingFragment StoreEntitySet="tb_TextBook">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ClssId" ColumnName="ClssId" />
+                <ScalarProperty Name="ClssName" ColumnName="ClssName" />
+                <ScalarProperty Name="TextBookPath" ColumnName="TextBookPath" />
+                <ScalarProperty Name="ThumbnailsPath" ColumnName="ThumbnailsPath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_VerifyResource">
+            <EntityTypeMapping TypeName="MODResourceModel.tb_VerifyResource">
+              <MappingFragment StoreEntitySet="tb_VerifyResource">
+                <ScalarProperty Name="ResourceID" ColumnName="ResourceID" />
+                <ScalarProperty Name="VerifyState" ColumnName="VerifyState" />
+                <ScalarProperty Name="VerifyDate" ColumnName="VerifyDate" />
+                <ScalarProperty Name="VerifyUser" ColumnName="VerifyUser" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBA_LessonSet">
+            <EntityTypeMapping TypeName="MODResourceModel.TBA_LessonSet">
+              <MappingFragment StoreEntitySet="TBA_LessonSet">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+                <ScalarProperty Name="SchoolStageID" ColumnName="SchoolStageID" />
+                <ScalarProperty Name="EditionID" ColumnName="EditionID" />
+                <ScalarProperty Name="TotalCounts" ColumnName="TotalCounts" />
+                <ScalarProperty Name="TotalTimeSpan" ColumnName="TotalTimeSpan" />
+                <ScalarProperty Name="TotalSize" ColumnName="TotalSize" />
+                <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBC_ResourceTypeEdition">
+            <EntityTypeMapping TypeName="MODResourceModel.TBC_ResourceTypeEdition">
+              <MappingFragment StoreEntitySet="TBC_ResourceTypeEdition">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="StyleID" ColumnName="StyleID" />
+                <ScalarProperty Name="EditionID" ColumnName="EditionID" />
+                <ScalarProperty Name="SchoolStageID" ColumnName="SchoolStageID" />
+                <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+                <ScalarProperty Name="TotalCounts" ColumnName="TotalCounts" />
+                <ScalarProperty Name="CountDate" ColumnName="CountDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBC_ResourceTypeGrade">
+            <EntityTypeMapping TypeName="MODResourceModel.TBC_ResourceTypeGrade">
+              <MappingFragment StoreEntitySet="TBC_ResourceTypeGrade">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="StyleID" ColumnName="StyleID" />
+                <ScalarProperty Name="GradeID" ColumnName="GradeID" />
+                <ScalarProperty Name="SchoolStageID" ColumnName="SchoolStageID" />
+                <ScalarProperty Name="TotalCounts" ColumnName="TotalCounts" />
+                <ScalarProperty Name="CountDate" ColumnName="CountDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBC_SubjectGrade">
+            <EntityTypeMapping TypeName="MODResourceModel.TBC_SubjectGrade">
+              <MappingFragment StoreEntitySet="TBC_SubjectGrade">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+                <ScalarProperty Name="GradeID" ColumnName="GradeID" />
+                <ScalarProperty Name="SchoolStageID" ColumnName="SchoolStageID" />
+                <ScalarProperty Name="TotalCounts" ColumnName="TotalCounts" />
+                <ScalarProperty Name="CountDate" ColumnName="CountDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RsTempTable">
+            <EntityTypeMapping TypeName="MODResourceModel.RsTempTable">
+              <MappingFragment StoreEntitySet="RsTempTable">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SchoolStage" ColumnName="SchoolStage" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Edition" ColumnName="Edition" />
+                <ScalarProperty Name="BookReel" ColumnName="BookReel" />
+                <ScalarProperty Name="Catalog" ColumnName="Catalog" />
+                <ScalarProperty Name="ResourceType" ColumnName="ResourceType" />
+                <ScalarProperty Name="ResourceStyle" ColumnName="ResourceStyle" />
+                <ScalarProperty Name="ResourceLevel" ColumnName="ResourceLevel" />
+                <ScalarProperty Name="KeyWords" ColumnName="KeyWords" />
+                <ScalarProperty Name="TeachingStep" ColumnName="TeachingStep" />
+                <ScalarProperty Name="TeachingModules" ColumnName="TeachingModules" />
+                <ScalarProperty Name="TeachingStyle" ColumnName="TeachingStyle" />
+                <ScalarProperty Name="Applicable" ColumnName="Applicable" />
+                <ScalarProperty Name="FileID" ColumnName="FileID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsVerify" ColumnName="IsVerify" />
+                <ScalarProperty Name="Purview" ColumnName="Purview" />
+                <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+                <ScalarProperty Name="UploadUser" ColumnName="UploadUser" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="DownCounts" ColumnName="DownCounts" />
+                <ScalarProperty Name="ScanCounts" ColumnName="ScanCounts" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="BreviaryImgUrl" ColumnName="BreviaryImgUrl" />
+                <ScalarProperty Name="ResourceSize" ColumnName="ResourceSize" />
+                <ScalarProperty Name="IsRecommend" ColumnName="IsRecommend" />
+                <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+                <ScalarProperty Name="ComeFrom" ColumnName="ComeFrom" />
+                <ScalarProperty Name="Copyright" ColumnName="Copyright" />
+                <ScalarProperty Name="CopyrightName" ColumnName="CopyrightName" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Course_back">
+            <EntityTypeMapping TypeName="MODResourceModel.tb_Course_back">
+              <MappingFragment StoreEntitySet="tb_Course_back">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="EditionID" ColumnName="EditionID" />
+                <ScalarProperty Name="ImgPath" ColumnName="ImgPath" />
+                <ScalarProperty Name="CoursePath" ColumnName="CoursePath" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CourseKey" ColumnName="CourseKey" />
+                <ScalarProperty Name="Coursetype" ColumnName="Coursetype" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_ResourceApplicable">
+            <EntityTypeMapping TypeName="MODResourceModel.tb_ResourceApplicable">
+              <MappingFragment StoreEntitySet="tb_ResourceApplicable">
+                <ScalarProperty Name="ResourceID" ColumnName="ResourceID" />
+                <ScalarProperty Name="ApplicableID" ColumnName="ApplicableID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_ResourceKnowledge">
+            <EntityTypeMapping TypeName="MODResourceModel.tb_ResourceKnowledge">
+              <MappingFragment StoreEntitySet="tb_ResourceKnowledge">
+                <ScalarProperty Name="ResourceID" ColumnName="ResourceID" />
+                <ScalarProperty Name="KnowledgeID" ColumnName="KnowledgeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_ResourceTeachingModule">
+            <EntityTypeMapping TypeName="MODResourceModel.tb_ResourceTeachingModule">
+              <MappingFragment StoreEntitySet="tb_ResourceTeachingModule">
+                <ScalarProperty Name="ResourceID" ColumnName="ResourceID" />
+                <ScalarProperty Name="TeachingModuleID" ColumnName="TeachingModuleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBA_ResourceTeaching">
+            <EntityTypeMapping TypeName="MODResourceModel.TBA_ResourceTeaching">
+              <MappingFragment StoreEntitySet="TBA_ResourceTeaching">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SchoolStageID" ColumnName="SchoolStageID" />
+                <ScalarProperty Name="GradeID" ColumnName="GradeID" />
+                <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+                <ScalarProperty Name="EditionID" ColumnName="EditionID" />
+                <ScalarProperty Name="BookReelID" ColumnName="BookReelID" />
+                <ScalarProperty Name="TotalCounts" ColumnName="TotalCounts" />
+                <ScalarProperty Name="TotalSize" ColumnName="TotalSize" />
+                <ScalarProperty Name="CountsLess1M" ColumnName="CountsLess1M" />
+                <ScalarProperty Name="Counts1To10M" ColumnName="Counts1To10M" />
+                <ScalarProperty Name="Counts10To100M" ColumnName="Counts10To100M" />
+                <ScalarProperty Name="CountsOver100M" ColumnName="CountsOver100M" />
+                <ScalarProperty Name="CountsKJ" ColumnName="CountsKJ" />
+                <ScalarProperty Name="CountsHDKJ" ColumnName="CountsHDKJ" />
+                <ScalarProperty Name="CountsTP" ColumnName="CountsTP" />
+                <ScalarProperty Name="CountsDH" ColumnName="CountsDH" />
+                <ScalarProperty Name="CountsYP" ColumnName="CountsYP" />
+                <ScalarProperty Name="CountsWB" ColumnName="CountsWB" />
+                <ScalarProperty Name="CountsSJ" ColumnName="CountsSJ" />
+                <ScalarProperty Name="CountsSP" ColumnName="CountsSP" />
+                <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+                <ScalarProperty Name="AnalysDate" ColumnName="AnalysDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="tb_ResourceCreator" TypeName="MODResourceModel.tb_ResourceCreator" StoreEntitySet="tb_ResourceCreator">
+            <EndProperty Name="tb_InnerUser">
+              <ScalarProperty Name="UserID" ColumnName="InnerUserID" />
+            </EndProperty>
+            <EndProperty Name="tb_Resource">
+              <ScalarProperty Name="ID" ColumnName="ResourceID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="tb_ResourceDetector" TypeName="MODResourceModel.tb_ResourceDetector" StoreEntitySet="tb_ResourceDetector">
+            <EndProperty Name="tb_InnerUser">
+              <ScalarProperty Name="UserID" ColumnName="InnerUserID" />
+            </EndProperty>
+            <EndProperty Name="tb_Resource">
+              <ScalarProperty Name="ID" ColumnName="ResourceID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="proc_CourseAnalys" FunctionName="MODResourceModel.Store.proc_CourseAnalys" />
+          <FunctionImportMapping FunctionImportName="proc_LessonSetAnalys" FunctionName="MODResourceModel.Store.proc_LessonSetAnalys" />
+          <FunctionImportMapping FunctionImportName="proc_pageView" FunctionName="MODResourceModel.Store.proc_pageView">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MODResourceModel.proc_pageView_Result">
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="totalpage" ColumnName="totalpage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="proc_ResourceAnalys" FunctionName="MODResourceModel.Store.proc_ResourceAnalys" />
+          <FunctionImportMapping FunctionImportName="proc_ResourceCount" FunctionName="MODResourceModel.Store.proc_ResourceCount" />
+          <FunctionImportMapping FunctionImportName="proc_Search" FunctionName="MODResourceModel.Store.proc_Search">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MODResourceModel.proc_Search_Result">
+                <ScalarProperty Name="RowNum" ColumnName="RowNum" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SchoolStage" ColumnName="SchoolStage" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Edition" ColumnName="Edition" />
+                <ScalarProperty Name="BookReel" ColumnName="BookReel" />
+                <ScalarProperty Name="Catalog" ColumnName="Catalog" />
+                <ScalarProperty Name="ResourceType" ColumnName="ResourceType" />
+                <ScalarProperty Name="ResourceStyle" ColumnName="ResourceStyle" />
+                <ScalarProperty Name="ResourceLevel" ColumnName="ResourceLevel" />
+                <ScalarProperty Name="KeyWords" ColumnName="KeyWords" />
+                <ScalarProperty Name="TeachingStep" ColumnName="TeachingStep" />
+                <ScalarProperty Name="TeachingStyle" ColumnName="TeachingStyle" />
+                <ScalarProperty Name="FileID" ColumnName="FileID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsVerify" ColumnName="IsVerify" />
+                <ScalarProperty Name="Purview" ColumnName="Purview" />
+                <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+                <ScalarProperty Name="UploadUser" ColumnName="UploadUser" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="DownCounts" ColumnName="DownCounts" />
+                <ScalarProperty Name="ScanCounts" ColumnName="ScanCounts" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="BreviaryImgUrl" ColumnName="BreviaryImgUrl" />
+                <ScalarProperty Name="ResourceSize" ColumnName="ResourceSize" />
+                <ScalarProperty Name="IsRecommend" ColumnName="IsRecommend" />
+                <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+                <ScalarProperty Name="ComeFrom" ColumnName="ComeFrom" />
+                <ScalarProperty Name="AppraisedCounts" ColumnName="AppraisedCounts" />
+                <ScalarProperty Name="CollectCounts" ColumnName="CollectCounts" />
+                <ScalarProperty Name="TeachingModules" ColumnName="TeachingModules" />
+                <ScalarProperty Name="Applicable" ColumnName="Applicable" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="Copyright" ColumnName="Copyright" />
+                <ScalarProperty Name="CopyrightName" ColumnName="CopyrightName" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+                <ScalarProperty Name="ResourceClass" ColumnName="ResourceClass" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="proc_SearchUpdate" FunctionName="MODResourceModel.Store.proc_SearchUpdate">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MODResourceModel.proc_SearchUpdate_Result">
+                <ScalarProperty Name="RowNum" ColumnName="RowNum" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SchoolStage" ColumnName="SchoolStage" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Edition" ColumnName="Edition" />
+                <ScalarProperty Name="BookReel" ColumnName="BookReel" />
+                <ScalarProperty Name="Catalog" ColumnName="Catalog" />
+                <ScalarProperty Name="ResourceType" ColumnName="ResourceType" />
+                <ScalarProperty Name="ResourceStyle" ColumnName="ResourceStyle" />
+                <ScalarProperty Name="ResourceLevel" ColumnName="ResourceLevel" />
+                <ScalarProperty Name="KeyWords" ColumnName="KeyWords" />
+                <ScalarProperty Name="TeachingStep" ColumnName="TeachingStep" />
+                <ScalarProperty Name="TeachingStyle" ColumnName="TeachingStyle" />
+                <ScalarProperty Name="FileID" ColumnName="FileID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsVerify" ColumnName="IsVerify" />
+                <ScalarProperty Name="Purview" ColumnName="Purview" />
+                <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+                <ScalarProperty Name="UploadUser" ColumnName="UploadUser" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="DownCounts" ColumnName="DownCounts" />
+                <ScalarProperty Name="ScanCounts" ColumnName="ScanCounts" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="BreviaryImgUrl" ColumnName="BreviaryImgUrl" />
+                <ScalarProperty Name="ResourceSize" ColumnName="ResourceSize" />
+                <ScalarProperty Name="IsRecommend" ColumnName="IsRecommend" />
+                <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+                <ScalarProperty Name="ComeFrom" ColumnName="ComeFrom" />
+                <ScalarProperty Name="AppraisedCounts" ColumnName="AppraisedCounts" />
+                <ScalarProperty Name="CollectCounts" ColumnName="CollectCounts" />
+                <ScalarProperty Name="TeachingModules" ColumnName="TeachingModules" />
+                <ScalarProperty Name="Applicable" ColumnName="Applicable" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="Copyright" ColumnName="Copyright" />
+                <ScalarProperty Name="CopyrightName" ColumnName="CopyrightName" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+                <ScalarProperty Name="ResourceClass" ColumnName="ResourceClass" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="proc_SearchVerify" FunctionName="MODResourceModel.Store.proc_SearchVerify">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MODResourceModel.proc_SearchVerify_Result">
+                <ScalarProperty Name="RowNum" ColumnName="RowNum" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SchoolStage" ColumnName="SchoolStage" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Edition" ColumnName="Edition" />
+                <ScalarProperty Name="BookReel" ColumnName="BookReel" />
+                <ScalarProperty Name="Catalog" ColumnName="Catalog" />
+                <ScalarProperty Name="ResourceType" ColumnName="ResourceType" />
+                <ScalarProperty Name="ResourceStyle" ColumnName="ResourceStyle" />
+                <ScalarProperty Name="ResourceLevel" ColumnName="ResourceLevel" />
+                <ScalarProperty Name="KeyWords" ColumnName="KeyWords" />
+                <ScalarProperty Name="TeachingStep" ColumnName="TeachingStep" />
+                <ScalarProperty Name="TeachingStyle" ColumnName="TeachingStyle" />
+                <ScalarProperty Name="FileID" ColumnName="FileID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsVerify" ColumnName="IsVerify" />
+                <ScalarProperty Name="Purview" ColumnName="Purview" />
+                <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+                <ScalarProperty Name="UploadUser" ColumnName="UploadUser" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="DownCounts" ColumnName="DownCounts" />
+                <ScalarProperty Name="ScanCounts" ColumnName="ScanCounts" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="BreviaryImgUrl" ColumnName="BreviaryImgUrl" />
+                <ScalarProperty Name="ResourceSize" ColumnName="ResourceSize" />
+                <ScalarProperty Name="IsRecommend" ColumnName="IsRecommend" />
+                <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+                <ScalarProperty Name="ComeFrom" ColumnName="ComeFrom" />
+                <ScalarProperty Name="AppraisedCounts" ColumnName="AppraisedCounts" />
+                <ScalarProperty Name="CollectCounts" ColumnName="CollectCounts" />
+                <ScalarProperty Name="TeachingModules" ColumnName="TeachingModules" />
+                <ScalarProperty Name="Applicable" ColumnName="Applicable" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="Copyright" ColumnName="Copyright" />
+                <ScalarProperty Name="CopyrightName" ColumnName="CopyrightName" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+                <ScalarProperty Name="ResourceClass" ColumnName="ResourceClass" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

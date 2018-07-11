@@ -1,0 +1,86 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FzSxYJX.Web", "FzSxYJX\FzSxYJX.Web.csproj", "{8AF631BB-FC67-470A-9FB8-AAF953CB537D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-Web", "5-Web", "{CB04BAA7-ED08-49F1-BAF7-A79C97BF5DAC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Common", "2-Common", "{99928E34-41E7-4144-BFD3-2B2038C79EA5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-BLL", "3-BLL", "{2FFC5A05-090C-4494-AE42-095726AC4FB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Model", "4-Model", "{12CC814A-47FA-4DBE-801B-6C86ADC3A256}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{A7E6A3B6-D322-4C36-80D2-C1C307F7FF1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FzSxYJX.Bll", "FzSxYJX.Bll\FzSxYJX.Bll.csproj", "{3841F6B3-CC2C-4A48-8E19-B23638C815EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FzSxYJX.Model", "FzSxYJX.Model\FzSxYJX.Model.csproj", "{9FC52D5E-9F09-4303-9F30-08B30AA23A2E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-DataBase", "1-DataBase", "{FDC6C4BF-09B3-460E-BE90-C9C2DA1A4BDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBase", "DataBase\DataBase.csproj", "{82405842-AB38-4754-9E86-A44BCCC0EA09}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6-window", "6-window", "{D0E582AB-F650-4E0C-B254-A5454618E337}"
+	ProjectSection(SolutionItems) = preProject
+		FzSxYJX\Views\Shared\_Layout.cshtml = FzSxYJX\Views\Shared\_Layout.cshtml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyncFileResource", "SyncFileResource\SyncFileResource.csproj", "{4D516A12-DD90-4917-A75B-3821B5051520}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportModResourceTool", "ExportModResourceTool\ExportModResourceTool.csproj", "{4F541F9E-83AE-458C-996B-FB2557885288}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8AF631BB-FC67-470A-9FB8-AAF953CB537D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AF631BB-FC67-470A-9FB8-AAF953CB537D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AF631BB-FC67-470A-9FB8-AAF953CB537D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AF631BB-FC67-470A-9FB8-AAF953CB537D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7E6A3B6-D322-4C36-80D2-C1C307F7FF1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7E6A3B6-D322-4C36-80D2-C1C307F7FF1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7E6A3B6-D322-4C36-80D2-C1C307F7FF1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7E6A3B6-D322-4C36-80D2-C1C307F7FF1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3841F6B3-CC2C-4A48-8E19-B23638C815EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3841F6B3-CC2C-4A48-8E19-B23638C815EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3841F6B3-CC2C-4A48-8E19-B23638C815EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3841F6B3-CC2C-4A48-8E19-B23638C815EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FC52D5E-9F09-4303-9F30-08B30AA23A2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FC52D5E-9F09-4303-9F30-08B30AA23A2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FC52D5E-9F09-4303-9F30-08B30AA23A2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FC52D5E-9F09-4303-9F30-08B30AA23A2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82405842-AB38-4754-9E86-A44BCCC0EA09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82405842-AB38-4754-9E86-A44BCCC0EA09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82405842-AB38-4754-9E86-A44BCCC0EA09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82405842-AB38-4754-9E86-A44BCCC0EA09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D516A12-DD90-4917-A75B-3821B5051520}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D516A12-DD90-4917-A75B-3821B5051520}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D516A12-DD90-4917-A75B-3821B5051520}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D516A12-DD90-4917-A75B-3821B5051520}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F541F9E-83AE-458C-996B-FB2557885288}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F541F9E-83AE-458C-996B-FB2557885288}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F541F9E-83AE-458C-996B-FB2557885288}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F541F9E-83AE-458C-996B-FB2557885288}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8AF631BB-FC67-470A-9FB8-AAF953CB537D} = {CB04BAA7-ED08-49F1-BAF7-A79C97BF5DAC}
+		{A7E6A3B6-D322-4C36-80D2-C1C307F7FF1E} = {99928E34-41E7-4144-BFD3-2B2038C79EA5}
+		{3841F6B3-CC2C-4A48-8E19-B23638C815EA} = {2FFC5A05-090C-4494-AE42-095726AC4FB5}
+		{9FC52D5E-9F09-4303-9F30-08B30AA23A2E} = {12CC814A-47FA-4DBE-801B-6C86ADC3A256}
+		{82405842-AB38-4754-9E86-A44BCCC0EA09} = {FDC6C4BF-09B3-460E-BE90-C9C2DA1A4BDE}
+		{4D516A12-DD90-4917-A75B-3821B5051520} = {D0E582AB-F650-4E0C-B254-A5454618E337}
+		{4F541F9E-83AE-458C-996B-FB2557885288} = {D0E582AB-F650-4E0C-B254-A5454618E337}
+	EndGlobalSection
+EndGlobal

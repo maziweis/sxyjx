@@ -1,0 +1,131 @@
+﻿@using FzSxYJX.Model
+@{
+    ViewBag.Title = "资源中心";
+    Layout = null;
+}
+
+@model ResourcePageModel
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>资源中心</title>
+    <link href="@Url.Content("~/Content/App_Theme/css/common.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/App_Theme/css/resourceList.css")" rel="stylesheet" />
+</head>
+<body>
+    <div class="header">
+        <div class="hCont">
+            <div class="titleH"><span>学习资源</span></div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="topCont">
+            <div class="mCont">
+                <div id="divBookID" name="@Model.Book.ID" class="titMsg">
+                    <span title="@Model.Book.BookName.Replace(Model.Book.StageName, "").Replace(Model.Book.EditionName, "").Replace(Model.Book.SubjectName, "")">@Model.Book.BookName.Replace(Model.Book.StageName, "").Replace(Model.Book.EditionName, "").Replace(Model.Book.SubjectName, "")</span>
+                    <p> @Model.ShowMsg</p>
+                </div>
+                <div class="shopMsg">
+                    <div class="searchM">
+                        <div class="left">
+                            
+                        </div>
+                        <div class="right">
+                            <div class="search">
+                                <input class="searchAct" type="button" value="">
+                                <input class="searchMsg" type="text" value="搜你想要...">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="minNav">
+                        <ul>
+                        </ul>
+                        
+                        <span>共<b id="txtTotal"></b>个资源</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mainCont">
+            <div class="mCont">
+                <div class="sidebar">
+                    <ul>
+                        @foreach (var item in Model.StandBookCataList)
+                        {
+                            if (Model.StandBookCataList.IndexOf(item) == 0)
+                            {
+                                <li id="@item.ID" name="@item.CataName" title="@item.CataName" class="check">
+                                    
+                                    @if (item.ChildCata != null && item.ChildCata.Count != 0)
+                                    {
+                                        <span>
+                                            @item.CataName
+                                        <em class="em"></em>
+                                        </span>
+                                        <ul>
+                                            @foreach (var child in item.ChildCata)
+                                            {
+                                                <li id="@child.ID" name="@child.CataName" title="@child.CataName">@child.CataName</li>
+                                            }
+                                        </ul>
+                                    }
+                                    else
+                                    {
+                                        <span>@item.CataName</span>
+                                    }
+                                </li>
+                            }
+                            else
+                            {
+                                <li id="@item.ID" name="@item.CataName" title="@item.CataName">
+                                    @if (item.ChildCata != null && item.ChildCata.Count != 0)
+                                    {
+                                        <span>
+                                            @item.CataName
+                                            <em class="em"></em>
+                                        </span>
+                                        <ul>
+                                            @foreach (var child in item.ChildCata)
+                                            {
+                                                <li id="@child.ID" name="@child.CataName" title="@child.CataName">@child.CataName</li>
+                                            }
+                                        </ul>
+                                    }
+                                    else
+                                    {
+                                        <span>@item.CataName</span>
+                                    }
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+                <div class="content">
+                    <div class="resList" name="@Model.FileUrl">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="actionDiv">
+        @*<div class='return' id='return' title='返回上一页'>
+            <a href='javascript:void(0)'></a>
+        </div>*@
+    </div>
+</body>
+</html>
+<script src="@Url.Content("~/Content/Tools/jquery/jquery-1.10.2.min.js")"></script>
+
+<script src="@Url.Content("~/Content/App_Theme/js/common.js")"></script>
+<script src="@Url.Content("~/Content/App_Theme/js/GoToTop.js")"></script>
+<script src="@Url.Content("~/Content/App_Theme/js/dialogCont.js")"></script>
+<script src="@Url.Content("~/Content/Scripts/Resource.js")"></script>
+

@@ -1,0 +1,48 @@
+﻿@{ 
+    List<FzSxYJX.Model.StageModel> StageList = FzSxYJX.Bll.IndexBLL.GetStage();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="reamd">
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("/Content/App_Theme/css/common.css")" rel="stylesheet" />
+    <link href="@Url.Content("/Content/App_Theme/css/index.css")" rel="stylesheet" />
+    @RenderSection("styles", required: false)
+</head>
+<body class="indexB">
+    <div class="header">
+        <div class="hCont">
+            <a class="logo"><img src="@Url.Content("/Content/App_Theme/image/logo.png")" alt="logo"></a>
+            <ul class="gradeList" id="gradeList">
+                @foreach (var stage in StageList)
+                {
+                    if (stage.IsCurrent)
+                    {
+                        <li class="cur" id="@stage.stageID">@stage.stageName</li>
+                    }
+                    else
+                    {
+                        <li id="@stage.stageID">@stage.stageName</li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+    <div class="main">
+        @RenderBody()  
+    </div>
+    <div class="footer"></div>
+    <div class="actionDiv">
+    </div>
+    <script src="@Url.Content("/Content/Tools/jquery/jquery1.42.min.js")"></script>
+    <script src="@Url.Content("/Content/Tools/jquery/artDialogAll.js")"></script>
+    <script src="@Url.Content("/Content/App_Theme/js/GoToTop.js")"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
